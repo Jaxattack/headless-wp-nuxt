@@ -84,13 +84,14 @@ a.readmore {
 
 .post {
   width:25vw;
-  border-bottom: 1px solid rgb(223, 222, 222);
   margin: 2em;
-  padding: 3rem 0rem 3rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
   color: #444;
-
+  img{
+    margin-bottom:0.5rem;
+  }
   h3 {
-    margin-bottom: 0.5em;
+    margin-bottom: 0rem;
     font-size: 26px;
   }
 }
