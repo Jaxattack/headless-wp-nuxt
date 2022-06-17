@@ -1,7 +1,10 @@
+const siteURL = "https://www.lancejackson.co.nz/headless_wordpress"
+
 import axios from "axios"
+
 let dynamicRoutes = () => {
   const routes = axios
-    .get("https://www.lancejackson.co.nz/headless_wordpress/wp-json/wp/v2/casestudies/")
+    .get(`${siteURL}/wp-json/wp/v2/casestudies/`)
     .then(res => {
       return res.data.map(post => `/blog/${post.slug}`)
     })
