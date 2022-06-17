@@ -1,8 +1,8 @@
 <template>
   <main class="post individual">
     <h1>{{ post.title.rendered }}</h1>
-    <small class="date">{{ post.date | dateformat }}</small>
-    <section v-html="post.content.rendered"></section>
+    <img :src="post.acf.hero_image" alt="post.acf.client_name"/>
+    <section v-html="post.acf.description"></section>
   </main>
 </template>
 

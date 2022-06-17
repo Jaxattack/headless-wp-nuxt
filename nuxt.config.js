@@ -1,7 +1,7 @@
 import axios from "axios"
 let dynamicRoutes = () => {
   const routes = axios
-    .get("https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=20")
+    .get("https://www.lancejackson.co.nz/headless_wordpress/wp-json/wp/v2/casestudies/")
     .then(res => {
       return res.data.map(post => `/blog/${post.slug}`)
     })
@@ -47,7 +47,6 @@ export default {
    */
   plugins: [
     "~/plugins/posts.server.js",
-    "~/plugins/tags.server.js",
     "~/plugins/dateformat.js"
   ],
   generate: {
