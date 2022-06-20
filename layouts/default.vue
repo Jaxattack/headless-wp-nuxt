@@ -32,12 +32,6 @@ body {
   background-color: #fff;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 300;
-}
-
 img {
   width: 100%;
 }

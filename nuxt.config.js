@@ -75,6 +75,7 @@ export default {
    */
   image: {
     // Options
+    domains: ['lancejackson.co.nz'],
     // The screen sizes predefined by `@nuxt/image`:
     screens: {
       xs: 320,
@@ -82,10 +83,8 @@ export default {
       md: 768,
       lg: 1024,
       xl: 1280,
-      xxl: 1536,
-      '2xl': 1536
+      xxl: 1536
     },
-    domains: ['lancejackson.co.nz'],
   },
   /*
   ** Do not import actual styles. Use this module only to import variables, mixins, functions (et cetera) as they won't exist in the actual build. Importing actual styles will include them in every component and will also make your build/HMR magnitudes slower. Do not do this!

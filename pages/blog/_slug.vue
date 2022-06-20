@@ -1,7 +1,7 @@
 <template>
   <main class="page page-post-single post transition">
     <h1>{{ post.title.rendered }}</h1>
-    <NuxtPicture :src="post.acf.hero_image" :key="post.acf.hero_image" />
+    <NuxtImage :src="post.acf.hero_image" :key="post.acf.hero_image" />
     <section v-html="post.acf.description"></section>
   </main>
 </template>
