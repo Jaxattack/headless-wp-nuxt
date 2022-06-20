@@ -1,6 +1,6 @@
 <template>
-  <div class="page page-index transition">
-    <app-masthead></app-masthead>
+  <div class="page page-posts transition">
+    <h1>{{ title }}</h1>
     <div class="posts">
       <main>
         <div class="post" v-for="post in posts" :key="post.id">
@@ -11,7 +11,7 @@
             <nuxt-link :to="`blog/${post.slug}`">{{ post.title.rendered }}</nuxt-link>
           </h3>
           <p>{{ post.acf.description }}</p>
-          <a :href="`blog/${post.slug}`" class="button slide">Go To Page</a>
+          <a :href="`blog/${post.slug}`" class="readmore slide">Read more</a>
         </div>
       </main>
     </div>
@@ -19,19 +19,17 @@
 </template>
 
 <script>
-import AppMasthead from "@/components/AppMasthead.vue";
 
 export default {
   components: {
-    AppMasthead
+
   },
   data() {
     return {
-      title: "Home",
-      description: "Home Page Description",
-      ogImage: "",
+      title: "Posts",
+      description: "Posts List Page Description",
       currentUrl: "",
-      activeClass: "active",
+      activeClass: "active"
     };
   },
   computed: {
@@ -91,73 +89,9 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin:0;
-  padding:0;
+.page-posts {
+
 }
-.page {
-  margin: 0 auto;
-  padding-top: 3vw;
-  padding-bottom:3vw;
-  min-height:calc(100vh - 3vw - 78px);
-  background: $white;
-}
-.page-index {
-  padding:0;
-  .posts{
-    padding:5vw 0;
-  }
-}
-.wrapper {
-  max-width:960px;
-  margin:0 auto;
-}
-a,
-a:active,
-a:visited {
-  text-decoration: none;
-  color: black;
-}
-img {
-  width:100%;
-}
-a.button {
-  display: inline-block;
-  font-size: .7rem;
-  text-transform: uppercase;
-  padding: 15px 15px;
-  letter-spacing: 2px;
-  position: relative;
-  background:$black;
-  color:$white;
-}
-.posts {
-  max-width:95vw;
-  margin:0 auto;
-  main {
-    display: flex;
-    flex-direction:row;
-    align-self: center;
-    justify-content:center;
-  }
-  .post {
-    width: 100%;
-    padding: 0 1px;
-    color: #444;
-    img {
-      margin-bottom:1rem;
-    }
-    h3 {
-      margin-bottom: 0rem;
-      font-size: 26px;
-    }
-    p {
-      margin:0 0 1rem 0;
-    }
-  }
-}
-.active {
-  border: 1px solid #d44119;
-  background-color: #fae091 !important;
-}
+
+
 </style>

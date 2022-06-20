@@ -1,5 +1,5 @@
 <template>
-	<footer>
+	<footer class="footer">
 		<NuxtLink to="/">Home</NuxtLink>
 	</footer>
 </template>
@@ -11,11 +11,23 @@
 </script>
 
 <style lang="scss" scoped>
-.nav {
+footer.footer {
+  display: flex;
+  justify-content:space-between;
   background: #000;
   color: #fff;
   padding: 1em 100px;
-
+  ul.nav-links{
+    display:flex;
+    flex:1;
+    align-items:center;
+    justify-content:flex-end;
+    padding:0;
+    li{
+      display: inline-block;
+      margin-left: 2rem;
+    }
+  }
   a {
     color: #fff;
     opacity: 0.8;
@@ -25,19 +37,10 @@
   }
 }
 
-div {
+nav {
   align-items: center;
   display: flex;
   height: 100%;
   width: 100%;
-}
-
-ul {
-  padding-left: 0;
-
-  li {
-    display: inline-block;
-    margin-right: 30px;
-  }
 }
 </style>

@@ -20,15 +20,12 @@ export default {
 </script>
 
 <style>
-html {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+*,
+*:before,
+*:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -38,24 +35,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Alata", serif;
-  font-weight: normal;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.individual h3 {
-  margin: 2em 0 25px;
-}
-
-h1 {
-  margin-bottom: 30px;
-  text-align: center;
+  font-weight: 300;
 }
 
 img {
@@ -89,9 +69,5 @@ pre {
 code {
   padding: 2px 0;
   line-height: 1.5;
-}
-
-p {
-  margin: 15px 0 20px;
 }
 </style>

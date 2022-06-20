@@ -8,17 +8,17 @@
 export default {
   data() {
     return {
-      tagline: "Headless WordPress on the JAMstack"
+      tagline: "Nuxt Boilerplate with Headless Wordpress"
     };
   }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/mixins.scss";
+@import "@/assets/scss/_mixins.scss";
 section.masthead {
   width: 100%;
-  height: 50vh;
+  height: 66.6vh;
   overflow: hidden;
   text-align: center;
   display: flex;
