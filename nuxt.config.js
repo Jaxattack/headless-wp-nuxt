@@ -70,7 +70,6 @@ export default {
     "@nuxtjs/style-resources", 
     "@nuxtjs/gtm",
     'nuxt-gsap-module',
-    '@nuxt/image'
   ],
   gsap: {
 
@@ -120,7 +119,8 @@ export default {
   modules: [
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxt/image'
     ],
   /** Sitemap options
    * Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
