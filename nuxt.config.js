@@ -77,19 +77,14 @@ export default {
     /*
    ** NuxtImg Module
    */
-  image: {
-    // Options
-    domains: ['lancejackson.co.nz'],
-    // The screen sizes predefined by `@nuxt/image`:
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536
-    },
-  },
+  // image: {
+  //   domains: ['lancejackson.co.nz', 'localhost:3000'],
+  //   screens: {
+  //     sm: 640,
+  //     md: 1024,
+  //     xl: 1280
+  //   },
+  // },
   /*
   ** Do not import actual styles. Use this module only to import variables, mixins, functions (et cetera) as they won't exist in the actual build. Importing actual styles will include them in every component and will also make your build/HMR magnitudes slower. Do not do this!
   Doc: https://github.com/nuxt-community/style-resources-module
@@ -120,7 +115,7 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
     '@nuxtjs/axios',
-    '@nuxt/image'
+    // '@nuxt/image'
     ],
   /** Sitemap options
    * Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
