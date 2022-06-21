@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/_mixins.scss";
+
 section.masthead {
   width: 100%;
   height: 66.6vh;

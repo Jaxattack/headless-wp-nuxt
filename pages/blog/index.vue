@@ -1,7 +1,7 @@
 <template>
   <div class="page page-posts transition">
-    <h1>{{ title }}</h1>
-    <div class="posts">
+    <div class="posts wrapper">
+      <h1>{{ title }}</h1>
       <main>
         <div class="post" v-for="post in posts" :key="post.id">
           <nuxt-link :to="`blog/${post.slug}`">
@@ -90,7 +90,12 @@ export default {
 
 <style lang="scss">
 .page-posts {
-
+  .posts{
+    main{
+      display: flex;
+      justify-content:space-between;
+    }
+  }
 }
 
 

@@ -13,7 +13,6 @@ let dynamicRoutes = () => {
 }
 
 export default {
-  mode: "universal",
   target: "static",
   /*
    ** Headers of the page
@@ -46,6 +45,12 @@ export default {
    ** Global CSS
    */
   css: ["~/assets/global.scss"],
+  /*
+   ** Middleware to handle endpoints
+   */
+  // serverMiddleware: {
+  //   '/_ipx': '~/middleware/ipx.js'
+  // },
   /*
    ** Plugins to load before mounting the App
    */

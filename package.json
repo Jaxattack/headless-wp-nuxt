@@ -17,12 +17,14 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "axios": "^0.19.0",
+    "fs": "0.0.1-security",
+    "ipx": "^0.9.6",
     "nuxt": "^2.12.0"
   },
   "devDependencies": {
     "@nuxt/image": "^0.6.0",
     "node-sass": "^4.13.1",
     "nuxt-gsap-module": "^1.7.1",
-    "sass-loader": "^8.0.0"
+    "sass-loader": "^10.1.1"
   }
 }

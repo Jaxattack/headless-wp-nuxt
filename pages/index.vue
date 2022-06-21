@@ -1,7 +1,7 @@
 <template>
   <div class="page page-index transition">
     <app-masthead></app-masthead>
-    <div class="posts">
+    <section class="posts wrapper">
       <main>
         <div class="post" v-for="post in posts" :key="post.id">
           <nuxt-link :to="`blog/${post.slug}`">
@@ -14,7 +14,7 @@
           <a :href="`blog/${post.slug}`" class="button slide">Go To Page</a>
         </div>
       </main>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -99,7 +99,7 @@ export default {
   margin: 0 auto;
   padding-top: 3vw;
   padding-bottom:3vw;
-  min-height:calc(100vh - 3vw - 78px);
+  min-height:calc(100vh - 3vw);
   background: $white;
 }
 .page-index {
@@ -142,7 +142,7 @@ a.button {
   }
   .post {
     width: 100%;
-    padding: 0 1px;
+    padding: 0 10px;
     color: #444;
     img {
       margin-bottom:1rem;
