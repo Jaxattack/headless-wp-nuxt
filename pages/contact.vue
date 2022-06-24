@@ -1,52 +1,30 @@
 <template>
-  <div class="page page-posts transition">
-    <div class="posts wrapper">
-      <h1>{{ title }}</h1>
-      <main>
-        <div class="post" v-for="post in posts" :key="post.id">
-          <nuxt-link :to="`blog/${post.slug}`">
-            <client-only>
-              <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
-            </client-only>
-          </nuxt-link>
-          <h3>
-            <nuxt-link :to="`blog/${post.slug}`">{{ post.title.rendered }}</nuxt-link>
-          </h3>
-          <p>{{ post.acf.description }}</p>
-          <a :href="`blog/${post.slug}`" class="readmore slide">Read more</a>
-        </div>
-      </main>
-    </div>
+  <div class="page page-contact transition">
+    <section class="wrapper">
+      <h1>Contact</h1>
+      <AppContactForm />  
+    </section>
   </div>
 </template>
 
 <script>
-import AppImageZoom from "@/components/AppImageZoom.vue";
+import AppContactForm from "@/components/AppContactForm.vue";
 
 export default {
-  components: {
-    AppImageZoom
-  },
   data() {
     return {
-      title: "Posts",
-      description: "Posts List Page Description",
-      currentUrl: "",
-      activeClass: "active"
+      title: "Contact",
+      description: "Contact Page Description",
+      currentUrl: ""
     };
   },
-  computed: {
-    posts() {
-      return this.$store.state.posts;
-    }
-  },
-  created() {
-    this.$store.dispatch("getPosts");
-    let currentUrl = this.$route.path;
+  components: {
+    AppContactForm
   },
   head() {
     return {
       title: this.title,
+      description: this.description,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         { hid: 'og:title', name: 'og:title', content: this.title },
@@ -56,6 +34,9 @@ export default {
         { hid: 'og:image', name: 'og:image', content: this.ogImage }
       ]
     }
+  },
+  created() {
+    let currentUrl = this.$route.path;
   },
   transition: {
     name: "slide",
@@ -91,15 +72,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.page-posts {
-  .posts{
-    main{
-      display: flex;
-      justify-content:space-between;
-    }
-  }
+<style lang="scss" scoped>
+.page-contact {
+
 }
-
-
 </style>

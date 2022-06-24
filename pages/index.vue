@@ -5,7 +5,9 @@
       <main>
         <div class="post" v-for="post in posts" :key="post.id">
           <nuxt-link :to="`blog/${post.slug}`">
-            <img :src="post.acf.hero_image" alt="post.acf.client_name"/>
+            <client-only>
+              <AppImageZoom :src="post.acf.hero_image" :alt="post.acf.client_name" />
+            </client-only>
           </nuxt-link>
           <h3>
             <nuxt-link :to="`blog/${post.slug}`">{{ post.title.rendered }}</nuxt-link>
@@ -20,10 +22,12 @@
 
 <script>
 import AppMasthead from "@/components/AppMasthead.vue";
+import AppImageZoom from "@/components/AppImageZoom.vue";
 
 export default {
   components: {
-    AppMasthead
+    AppMasthead,
+    AppImageZoom
   },
   data() {
     return {
@@ -144,10 +148,8 @@ a.button {
     width: 100%;
     padding: 0 10px;
     color: #444;
-    img {
-      margin-bottom:1rem;
-    }
     h3 {
+      margin-top:1rem;
       margin-bottom: 0rem;
       font-size: 26px;
     }

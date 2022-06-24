@@ -7,11 +7,8 @@
     </div>
     
     <ul class="nav-links">
-      <li class="nav-link">
-        <nuxt-link to="/about">About</nuxt-link>
-      </li>
-      <li class="nav-link">
-        <nuxt-link to="/blog">Posts</nuxt-link>
+      <li v-for="navLink in this.navLinks" :key="navLink.label" class="nav-link">
+        <nuxt-link :to="navLink.to">{{ navLink.label }}</nuxt-link>
       </li>
     </ul>
   </nav>
@@ -21,6 +18,15 @@
 import AppIcon from "@/components/AppIcon.vue";
 
 export default {
+  data() {
+    return{
+      navLinks: [
+        { to: '/about', label: 'About' },
+        { to: '/blog', label: 'Posts' },
+        { to: '/contact', label: 'Contact' },
+      ]
+    }
+  },
   components: {
     AppIcon
   }

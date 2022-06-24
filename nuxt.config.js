@@ -74,7 +74,9 @@ export default {
   //   '/_ipx': '~/middleware/ipx.js'
   // },
   gsap: {
-
+    extraPlugins: {
+      scrollTrigger: true
+    },
   },
     /*
    ** NuxtImg Module
@@ -137,6 +139,9 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: [
+      "gsap"
+    ],
     extend(config, {}) {
       config.node = {
           fs: 'empty'
