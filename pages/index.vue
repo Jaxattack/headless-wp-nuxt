@@ -105,11 +105,11 @@ export default {
 .page-index {
   padding:0;
   .posts{
-    padding:5vw 0;
+    padding:calc(2.5vw + 10px) 0;
   }
 }
 .wrapper {
-  max-width:960px;
+  max-width:800px;
   margin:0 auto;
 }
 a,

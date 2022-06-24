@@ -1,4 +1,5 @@
 const siteURL = "https://www.lancejackson.co.nz/headless_wordpress"
+const FriendlyErrorsPlugin = require('friendly-errors-plugin');
 
 import axios from "axios"
 
@@ -46,12 +47,6 @@ export default {
    */
   css: ["~/assets/global.scss"],
   /*
-   ** Middleware to handle endpoints
-   */
-  // serverMiddleware: {
-  //   '/_ipx': '~/middleware/ipx.js'
-  // },
-  /*
    ** Plugins to load before mounting the App
    */
   plugins: [
@@ -70,7 +65,14 @@ export default {
     "@nuxtjs/style-resources", 
     "@nuxtjs/gtm",
     'nuxt-gsap-module',
+    // '@nuxt/image',
   ],
+    /*
+   ** Middleware to handle endpoints
+   */
+  // serverMiddleware: {
+  //   '/_ipx': '~/middleware/ipx.js'
+  // },
   gsap: {
 
   },
@@ -78,7 +80,7 @@ export default {
    ** NuxtImg Module
    */
   // image: {
-  //   domains: ['lancejackson.co.nz', 'localhost:3000'],
+  //   domains: ['lancejackson.co.nz'],
   //   screens: {
   //     sm: 640,
   //     md: 1024,
@@ -115,8 +117,7 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
     '@nuxtjs/axios',
-    // '@nuxt/image'
-    ],
+  ],
   /** Sitemap options
    * Doc: https://www.npmjs.com/package/@nuxtjs/sitemap
    */
@@ -136,6 +137,13 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, {}) {
+      config.node = {
+          fs: 'empty'
+      }
+      plugins: [
+        new FriendlyErrorsPlugin(),
+      ]
+    }
   }
 }

@@ -1,14 +1,23 @@
 <template>
   <main class="page page-post-single post transition">
     <h1>{{ post.title.rendered }}</h1>
-    <img :src="post.acf.hero_image" alt="">
-    <section v-html="post.acf.description"></section>
+
+    <client-only>
+      <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
+    </client-only>
+    
+    <p>{{ post.acf.description }}</p>
+    <p>{{ post.acf.body_copy }}</p>
   </main>
 </template>
 
 <script>
+import AppImageZoom from "@/components/AppImageZoom.vue";
 
 export default {
+  components: {
+    AppImageZoom
+  },
   data() {
     return {
       slug: this.$route.params.slug
@@ -75,8 +84,6 @@ export default {
 
 <style lang="scss" scoped>
 .page-post-single {
-  margin: 60px auto 50px;
   max-width: 800px;
-  padding: 0 30px 70px;
 }
 </style>
