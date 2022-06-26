@@ -1,22 +1,29 @@
 <template>
   <main class="page page-post-single post transition">
-    <h1>{{ post.title.rendered }}</h1>
+    <div class="wrapper">
+      <div class="container">
+        
+        <h1>{{ post.title.rendered }}</h1>
 
-    <client-only>
-      <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
-    </client-only>
-    
-    <p>{{ post.acf.description }}</p>
-    <p>{{ post.acf.body_copy }}</p>
+        <client-only>
+          <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
+        </client-only>
+        
+        <h3>{{ post.acf.description }}</h3>
+        <p>{{ post.acf.body_copy }}</p>        
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
+import AppMasthead from "@/components/AppMasthead.vue";  
 import AppImageZoom from "@/components/AppImageZoom.vue";
 
 export default {
   components: {
-    AppImageZoom
+    AppImageZoom,
+    AppMasthead
   },
   data() {
     return {
@@ -39,12 +46,21 @@ export default {
     return {
       title: this.post.title.rendered,
       meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'og:title', name: 'og:title', content: this.post.title },
-        { hid: 'description', name: 'description', content: this.post.acf.description },
-        { hid: 'fb:app_id', name: 'fb:app_id', content: 'x' },
+        // hid is used as unique identifier
+        // Facebook OG Tags
+        { hid: 'og:type', name: 'og:type', content: "website" },
         { hid: 'og:url', name: 'og:url', content: this.currentUrl },
-        { hid: 'og:image', name: 'og:image', content: this.post.acf.hero_image }
+        { hid: 'og:title', name: 'og:title', content: this.title },
+        { hid: 'og:description', name: 'og:description', content: this.post.acf.description },
+        { hid: 'og:image', name: 'og:image', content: this.post.acf.hero_image },
+        // Twitter Card
+        { hid: 'twitter:card', name: 'twitter:card', content: this.summary },
+        { hid: 'twitter:url', name: 'twitter:url', content: this.currentUrl },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.post.acf.description },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.post.acf.hero_image },
+        // Search Engine Meta
+        { hid: 'description', name: 'description', content: this.post.acf.description }
       ]
     }
   },
@@ -64,7 +80,7 @@ export default {
         scale: 1,
         opacity: 1,
         top: 0,
-        duration: .1,
+        duration: .2,
         ease: "power2.inOut",
         onComplete: done,
       });
@@ -73,7 +89,7 @@ export default {
       this.$gsap.to(el, {
         opacity: 0,
         top: "100%",
-        duration: .1,
+        duration: .2,
         ease: "power2.inOut",
         onComplete: done,
       });
@@ -84,6 +100,8 @@ export default {
 
 <style lang="scss" scoped>
 .page-post-single {
-  max-width: 800px;
+  picture{
+    margin-bottom:2em;
+  }
 }
 </style>

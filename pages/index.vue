@@ -1,41 +1,27 @@
 <template>
   <div class="page page-index transition">
-    <app-masthead></app-masthead>
-    <section class="posts wrapper">
-      <main>
-        <div class="post" v-for="post in posts" :key="post.id">
-          <nuxt-link :to="`blog/${post.slug}`">
-            <client-only>
-              <AppImageZoom :src="post.acf.hero_image" :alt="post.acf.client_name" />
-            </client-only>
-          </nuxt-link>
-          <h3>
-            <nuxt-link :to="`blog/${post.slug}`">{{ post.title.rendered }}</nuxt-link>
-          </h3>
-          <p>{{ post.acf.description }}</p>
-          <a :href="`blog/${post.slug}`" class="button slide">Go To Page</a>
-        </div>
-      </main>
-    </section>
+    <AppMasthead :heading="description" image="/mountains-masthead.jpg"/>
+    <AppPostList/>
   </div>
 </template>
 
 <script>
 import AppMasthead from "@/components/AppMasthead.vue";
 import AppImageZoom from "@/components/AppImageZoom.vue";
+import AppPostList from "@/components/AppPostList.vue";
 
 export default {
   components: {
     AppMasthead,
-    AppImageZoom
+    AppImageZoom,
+    AppPostList
   },
   data() {
     return {
       title: "Home",
-      description: "Home Page Description",
+      description: "Nuxt Boilerplate with Headless Wordpress",
       ogImage: "",
       currentUrl: "",
-      activeClass: "active",
     };
   },
   computed: {
@@ -51,12 +37,20 @@ export default {
     return {
       title: this.title,
       meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'og:title', name: 'og:title', content: this.title },
-        { hid: 'description', name: 'description', content: this.description },
-        { hid: 'fb:app_id', name: 'fb:app_id', content: 'x' },
+        // Facebook OG Tags
+        { hid: 'og:type', name: 'og:type', content: "website" },
         { hid: 'og:url', name: 'og:url', content: this.currentUrl },
-        { hid: 'og:image', name: 'og:image', content: this.ogImage }
+        { hid: 'og:title', name: 'og:title', content: this.title },
+        { hid: 'og:description', name: 'og:description', content: this.description },
+        { hid: 'og:image', name: 'og:image', content: this.ogImage },
+        // Twitter Card
+        { hid: 'twitter:card', name: 'twitter:card', content: this.summary },
+        { hid: 'twitter:url', name: 'twitter:url', content: this.currentUrl },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.description },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.ogImage },
+        // Search Engine Meta
+        { hid: 'description', name: 'description', content: this.description }
       ]
     }
   },
@@ -76,7 +70,7 @@ export default {
       this.$gsap.to(el, {
         opacity: 1,
         top: 0,
-        duration: .1,
+        duration: .2,
         ease: "power2.inOut",
         onComplete: done,
       });
@@ -85,7 +79,7 @@ export default {
       this.$gsap.to(el, {
         opacity: 0,
         top: "100%",
-        duration: .1,
+        duration: .2,
         ease: "power2.inOut",
         onComplete: done,
       });
@@ -99,28 +93,34 @@ export default {
   margin:0;
   padding:0;
 }
+html,body{
+  background: $black;
+}
 .page {
   margin: 0 auto;
-  padding-top: 3vw;
-  padding-bottom:3vw;
-  min-height:calc(100vh - 3vw);
-  background: $white;
+  padding-top: 4em;
+  padding-bottom:4em;
+  min-height:calc(100vh - 4em);
+  background: $black;
 }
 .page-index {
-  padding:0;
   .posts{
     padding:calc(2.5vw + 10px) 0;
   }
 }
-.wrapper {
-  max-width:800px;
+.wrapper{
+  padding-top:4em;
+}
+.container {
+  width:100%;
+  max-width:960px;
   margin:0 auto;
 }
 a,
 a:active,
 a:visited {
   text-decoration: none;
-  color: black;
+  color: $white;
 }
 img {
   width:100%;
@@ -132,13 +132,19 @@ a.button {
   padding: 15px 15px;
   letter-spacing: 2px;
   position: relative;
-  background:$black;
-  color:$white;
+  border:1px solid $grey;
+  border-radius:.3em;
+  &:hover{
+    background:$grey;
+  }
+  &:active, &:focus{
+    border-color:$white;
+  }
 }
 .posts {
-  max-width:95vw;
+  max-width:97vw;
   margin:0 auto;
-  main {
+  main {  
     display: flex;
     flex-direction:row;
     align-self: center;
@@ -147,7 +153,6 @@ a.button {
   .post {
     width: 100%;
     padding: 0 10px;
-    color: #444;
     h3 {
       margin-top:1rem;
       margin-bottom: 0rem;
@@ -157,9 +162,5 @@ a.button {
       margin:0 0 1rem 0;
     }
   }
-}
-.active {
-  border: 1px solid #d44119;
-  background-color: #fae091 !important;
 }
 </style>

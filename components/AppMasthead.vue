@@ -1,19 +1,16 @@
 <template>
   <section class="masthead">
     <client-only>
-      <AppImageZoom src="/mountains-masthead.jpg" alt="Masthead" />
+      <AppImageZoom :src="image" :alt="heading" />
     </client-only>
-    <h1>{{ tagline }}</h1>
+    <h1>{{ heading }}</h1>
   </section>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      tagline: "Nuxt Boilerplate with Headless Wordpress"
-    };
-  }
+  name: 'Masthead',
+  props: ['heading','image']
 };
 </script>
 
@@ -22,28 +19,32 @@ export default {
 
 section.masthead {
   width: 100%;
-  height: 66.6vh;
+  height: 60vh;
   overflow: hidden;
+  position:relative;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7vw;
+  background:$black;
   color: #333;
   picture{
     width: 100%;
-    height: 66.6vh;
+    height: 60vh;
     position:absolute;
     top:0;
     left:0;
     bottom:0;
     right:0;
-    z-index:-1;
+    z-index:1;
     object-fit: cover;
+    object-position: center;
   }
   h1 {
     color: white;
-    @include fluid-type(font-size, 320px, 1366px, 30px, 65px);
+    margin-bottom:0;
+    position:relative;
+    z-index:100;
   }
 }
 

@@ -1,22 +1,6 @@
 <template>
   <div class="page page-posts transition">
-    <div class="posts wrapper">
-      <h1>{{ title }}</h1>
-      <main>
-        <div class="post" v-for="post in posts" :key="post.id">
-          <nuxt-link :to="`blog/${post.slug}`">
-            <client-only>
-              <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
-            </client-only>
-          </nuxt-link>
-          <h3>
-            <nuxt-link :to="`blog/${post.slug}`">{{ post.title.rendered }}</nuxt-link>
-          </h3>
-          <p>{{ post.acf.description }}</p>
-          <a :href="`blog/${post.slug}`" class="readmore slide">Read more</a>
-        </div>
-      </main>
-    </div>
+    <AppPostList/>
   </div>
 </template>
 
@@ -48,12 +32,20 @@ export default {
     return {
       title: this.title,
       meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'og:title', name: 'og:title', content: this.title },
-        { hid: 'description', name: 'description', content: this.description },
-        { hid: 'fb:app_id', name: 'fb:app_id', content: 'x' },
+        // Facebook OG Tags
+        { hid: 'og:type', name: 'og:type', content: "website" },
         { hid: 'og:url', name: 'og:url', content: this.currentUrl },
-        { hid: 'og:image', name: 'og:image', content: this.ogImage }
+        { hid: 'og:title', name: 'og:title', content: this.title },
+        { hid: 'og:description', name: 'og:description', content: this.description },
+        { hid: 'og:image', name: 'og:image', content: this.ogImage },
+        // Twitter Card
+        { hid: 'twitter:card', name: 'twitter:card', content: this.summary },
+        { hid: 'twitter:url', name: 'twitter:url', content: this.currentUrl },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.description },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.ogImage },
+        // Search Engine Meta
+        { hid: 'description', name: 'description', content: this.description }
       ]
     }
   },
@@ -73,7 +65,7 @@ export default {
       this.$gsap.to(el, {
         opacity: 1,
         top: 0,
-        duration: .1,
+        duration: .2,
         ease: "power2.inOut",
         onComplete: done,
       });
@@ -82,7 +74,7 @@ export default {
       this.$gsap.to(el, {
         opacity: 0,
         top: "100%",
-        duration: .1,
+        duration: .2,
         ease: "power2.inOut",
         onComplete: done,
       });
@@ -93,13 +85,6 @@ export default {
 
 <style lang="scss">
 .page-posts {
-  .posts{
-    main{
-      display: flex;
-      justify-content:space-between;
-    }
-  }
+
 }
-
-
 </style>

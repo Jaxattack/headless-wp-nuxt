@@ -1,12 +1,13 @@
 html{
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  word-spacing: 1px;
+  font-size: 1vw;
+  line-height:1.45;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  color:$white;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -14,14 +15,17 @@ h1,h2,h3,h4,h5,h6{
 	letter-spacing:.05rem;
 }
 h1{
-	font-size:4.5rem;
+	font-size:4em;
 	font-weight:100;
+	line-height:1.2;
 	margin-bottom:2rem;
 }
 h2{
+	font-size:2em;
 	font-weight:100;
 }
 h3{
+	font-size:1.5em;
 	font-weight:400;
 }
 h4{
@@ -45,5 +49,27 @@ ul{
 }
 
 hr{
+
+}	
+
+@media screen and (max-width:1200px) {
+
+	html{
+		font-size:16px;
+	}
+
+	.container{
+		padding:0px 20px;
+	}
+
+	.posts{
+		main{
+			flex-direction:column;
+		}
+		.post{
+			width:100%;
+			margin-bottom:2em;
+		}
+	}
 
 }

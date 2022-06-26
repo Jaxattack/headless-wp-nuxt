@@ -14,9 +14,9 @@
 footer.footer {
   display: flex;
   justify-content:space-between;
-  background: #000;
-  color: #fff;
-  padding: 1em 100px;
+  background: $black;
+  color: $white;
+  padding: 1em 1.5em;
   ul.nav-links{
     display:flex;
     flex:1;
@@ -29,7 +29,7 @@ footer.footer {
     }
   }
   a {
-    color: #fff;
+    color: $white;
     opacity: 0.8;
     &:hover {
       opacity: 1;

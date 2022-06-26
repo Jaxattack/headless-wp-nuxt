@@ -1,7 +1,7 @@
 <template>
-	<div class="form-wrapper">
+	<div class="form-container">
 		<form id="formapp" @submit="checkForm">
-			<div v-if="errors.length">
+			<div class="errors" v-if="errors.length">
 				<b>Please correct the following error(s):</b>
 				<ul>
 					<li v-for="(error, index) in errors" :key="index">{{ error }}</li>
@@ -22,7 +22,7 @@
 			<div>
 				<input type="submit" value="Submit">
 			</div>
-			<div class="form-sent" v-if="sent">Your message has been sent.</div>
+			<div class="success" v-if="sent">Your message has been sent.</div>
 		</form>
 	</div>
 </template>
@@ -97,8 +97,9 @@ export default {
 <style lang="scss" scoped>
 /**
  * Basic Form Styles
- */
+ */	
  label {
+ 	margin:.3rem 0 0;
  	min-width:100px;
  	display: block;
 }
@@ -126,79 +127,25 @@ select {
 	margin:.5em 0;
 	padding:10px;
 	width:100%;
+	max-width:800px;
 }
 textarea {
-	max-width:400px;
 	height:250px;
 }
 .success {
-	background:#e6efc2;
 	color:#264409;
-	border-color:#c6d880;
+	border:1px solid green;
+	border-radius:5px;
+	padding:.5rem;
+	margin-top:1rem;
 }
 
 /* Form styles */
 .form-container {
-	margin:10px;
-	padding:25px;
-	background:ghostwhite;
-	border-radius:6px!important;
-	border:1px dashed #b5ae8d;
-}
-.form-sent{
-	margin:0 0 10px;
-	padding:5px 10px!important;
-	background:green;
+	
 }
 .errors {
-	margin:0 0 10px;
-	padding:5px 10px!important;
-	border:#750000 2px solid;
-	background:#ebe9ce;
-	border-radius:6px;
-}
-.errors p {
-	margin:0;
-}
-.errors p em {
-	color:#750000;
-	font-weight:bold;
-}
-.form-container form p {
-	margin:0;
-}
-p {
-	padding:15px 0 20px;
-}
-.form-container form p.note {
-	margin-left:170px;
-	font-size:90%;
-	color:#333;
-}
-.form-container form fieldset {
-	margin:10px 0;
-	padding:10px;
-	border:#ccc 1px solid;
-	border-radius:6px;
-}
-.form-container label,.form-container span.label {
-	margin-right:10px;
-	padding-right:10px;
-	width:150px;
-	display:block;
-	float:left;
-	text-align:right;
-	position:relative;
-}
-.form-container label.error,.form-container span.error {
-	color:#750000;
-}
-.form-container input.error {
-	border-color:#750000;
-	background-color:#bd3e3e;
-}
-.form-container input:focus,.form-container input.error:focus,.form-container textarea:focus {
-	background-color:#ececdb;
-	border-color:#d3d3b8;
+	color:red;
+	margin:0 0 1rem;
 }
 </style>

@@ -35,11 +35,19 @@ export default {
 
 <style lang="scss" scoped>
 nav.nav {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
   display: flex;
+  align-items: center;
+  height: 4em;
+  width: 100%;
   justify-content:space-between;
-  background: #000;
-  color: #fff;
-  padding: 1em 100px;
+  background: $black;
+  color: $white;
+  border-bottom:.5px solid $grey;
+  padding: 1em 1.5em;
   .nav-logo{
     display:flex;
     flex:0;
@@ -60,18 +68,13 @@ nav.nav {
     }
   }
   a {
-    color: #fff;
-    opacity: 0.8;
+    color: $white;
     &:hover {
       opacity: 1;
     }
+    &.nuxt-link-exact-active{
+      font-weight:600;
+    }
   }
-}
-
-nav {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  width: 100%;
 }
 </style>
