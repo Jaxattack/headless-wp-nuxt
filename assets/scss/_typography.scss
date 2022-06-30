@@ -1,6 +1,7 @@
 html{
   font-family: "Open Sans", sans-serif;
   font-size: 1vw;
+  font-weight:300;
   line-height:1.45;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -59,17 +60,7 @@ hr{
 	}
 
 	.container{
-		padding:0px 20px;
-	}
-
-	.posts{
-		main{
-			flex-direction:column;
-		}
-		.post{
-			width:100%;
-			margin-bottom:2em;
-		}
+		padding:0px 1.5em;
 	}
 
 }

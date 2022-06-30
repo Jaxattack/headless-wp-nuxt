@@ -15,6 +15,7 @@ footer.footer {
   display: flex;
   justify-content:space-between;
   background: $black;
+  border-top:.5px solid $grey;
   color: $white;
   padding: 1em 1.5em;
   ul.nav-links{

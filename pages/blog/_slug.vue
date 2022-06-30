@@ -63,37 +63,6 @@ export default {
         { hid: 'description', name: 'description', content: this.post.acf.description }
       ]
     }
-  },
-  transition: {
-    name: "slide",
-    mode: "out-in",
-    css: false,
-
-    beforeEnter(el) {
-      this.$gsap.set(el, {
-        opacity: 0,
-        top: "-100%",
-      });
-    },
-    enter(el, done) {
-      this.$gsap.to(el, {
-        scale: 1,
-        opacity: 1,
-        top: 0,
-        duration: .2,
-        ease: "power2.inOut",
-        onComplete: done,
-      });
-    },
-    leave(el, done) {
-      this.$gsap.to(el, {
-        opacity: 0,
-        top: "100%",
-        duration: .2,
-        ease: "power2.inOut",
-        onComplete: done,
-      });
-    },
   }
 };
 </script>

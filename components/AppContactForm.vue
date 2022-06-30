@@ -105,20 +105,23 @@ export default {
 }
 input[type=text],
 input[type=password],
-textarea {
-	border:1px solid rgba(0,0,0,0.25);
+textarea,
+select {
+    border:2px solid $grey;
+    border-radius:8px;
+    background:transparent;
+    color:$white;
+    font-family: "Open Sans", sans-serif;
+    font-size:.9rem;
+    font-weight:300;
+    height:50px;
+    line-height:1.2rem;
 }
 input[type=text]:focus,
 input[type=password]:focus,
 input.text:focus,
 input.title:focus,
 textarea:focus {
-	border-color:#666;
-}
-select {
-	background-color:#fff;
-	border-width:1px;
-	border-style:solid;
 }
 input[type=text],
 input[type=password],
@@ -131,6 +134,26 @@ select {
 }
 textarea {
 	height:250px;
+	resize:none;
+}
+input[type="submit"] {
+  display: inline-block;
+  font-size: .7rem;
+  text-transform: uppercase;
+  padding: 15px 15px;
+  letter-spacing: 2px;
+  position: relative;
+  background:transparent;
+  color:$white;
+  border:1px solid $grey;
+  border-radius:.3em;
+  &:hover{
+    border-color:$white;
+    cursor:pointer;
+  }
+  &:active, &:focus{
+    border-color:$white;
+  }
 }
 .success {
 	color:#264409;

@@ -2,7 +2,7 @@
 	<picture>
 		<source media="(min-width:650px)" :srcset="this.src">
 		<source media="(min-width:465px)" :srcset="this.src">
-		<img class="scroll-image" :src="this.src" style="width:100%;">
+		<img class="hover-image" :src="this.src" style="width:100%;">
 	</picture>
 </template>
 
@@ -16,22 +16,6 @@ if (process.client) {
 
 export default {
 	props: ['src'],
-	created() {
-		window.addEventListener("scroll", this.handleScroll);
-	},
-	destroyed() {
-		window.removeEventListener("scroll", this.handleScroll);
-	},
-	methods: {
-	    handleScroll(event) {
-	    	let image = document.querySelectorAll('scroll-image');
-	    	let scrollY = window.scrollY;
-
-	    	document.querySelectorAll('.scroll-image').forEach(function(image) {
-	    		image.style.transform = `scale(${1 + scrollY * 0.00008})`;
-	    	});
-	    }
-	}
 }
 </script>
 
@@ -45,5 +29,10 @@ picture{
 img{
 	object-fit: cover;
 	will-change: transform;
+	transition: transform 400ms ease;
+	&:hover{
+		transition: transform 300ms ease;
+		transform: scale(1.01);
+	}
 }
 </style>

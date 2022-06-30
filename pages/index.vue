@@ -1,6 +1,6 @@
 <template>
   <div class="page page-index transition">
-    <AppMasthead :heading="description" image="/mountains-masthead.jpg"/>
+    <AppMasthead :image="heroImage"/>
     <AppPostList/>
   </div>
 </template>
@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       title: "Home",
-      description: "Nuxt Boilerplate with Headless Wordpress",
-      ogImage: "",
+      heading: "Nuxt Boilerplate with Headless Wordpress",
+      heroImage: "/mountains-masthead.jpg",
       currentUrl: "",
     };
   },
@@ -28,6 +28,8 @@ export default {
     posts() {
       return this.$store.state.posts;
     }
+  },
+  methods: {
   },
   created() {
     this.$store.dispatch("getPosts");
@@ -53,37 +55,6 @@ export default {
         { hid: 'description', name: 'description', content: this.description }
       ]
     }
-  },
-  transition: {
-    name: "slide",
-    mode: "out-in",
-    css: false,
-
-    beforeEnter(el) {
-      this.$gsap.set(el, {
-        scale: 1,
-        opacity: 0,
-        top: "-100%",
-      });
-    },
-    enter(el, done) {
-      this.$gsap.to(el, {
-        opacity: 1,
-        top: 0,
-        duration: .2,
-        ease: "power2.inOut",
-        onComplete: done,
-      });
-    },
-    leave(el, done) {
-      this.$gsap.to(el, {
-        opacity: 0,
-        top: "100%",
-        duration: .2,
-        ease: "power2.inOut",
-        onComplete: done,
-      });
-    },
   }
 };
 </script>
@@ -105,7 +76,7 @@ html,body{
 }
 .page-index {
   .posts{
-    padding:calc(2.5vw + 10px) 0;
+    padding:calc(2.5vw + 1.5em) 0;
   }
 }
 .wrapper{
@@ -135,32 +106,10 @@ a.button {
   border:1px solid $grey;
   border-radius:.3em;
   &:hover{
-    background:$grey;
+    border-color:$white;
   }
   &:active, &:focus{
     border-color:$white;
-  }
-}
-.posts {
-  max-width:97vw;
-  margin:0 auto;
-  main {  
-    display: flex;
-    flex-direction:row;
-    align-self: center;
-    justify-content:center;
-  }
-  .post {
-    width: 100%;
-    padding: 0 10px;
-    h3 {
-      margin-top:1rem;
-      margin-bottom: 0rem;
-      font-size: 26px;
-    }
-    p {
-      margin:0 0 1rem 0;
-    }
   }
 }
 </style>

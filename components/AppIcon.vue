@@ -48,10 +48,10 @@
 export default {
   props: {
     height: {
-      default: "3rem"
+      default: "2.5rem"
     },
     width: {
-      default: "10rem"
+      default: "7.25rem"
     },
     fill: {
       type: String,

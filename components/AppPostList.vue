@@ -4,7 +4,7 @@
       <div class="post" v-for="post in posts" :key="post.id">
         <nuxt-link :to="`blog/${post.slug}`">
           <client-only>
-            <AppImageZoom :src="post.acf.hero_image" :alt="post.acf.client_name" />
+            <AppImageHover :src="post.acf.hero_image" :alt="post.acf.client_name" />
           </client-only>
         </nuxt-link>
         <h3>
@@ -40,12 +40,47 @@
 </script>
 
 <style lang="scss">
-.posts{
-  main{
-    display: flex;
-    justify-content:space-between;
-    margin-left: -10px;
-    margin-right: -10px;
+.posts {
+  max-width:98rem;
+  margin:0 auto;
+  main {  
+    display:  grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .post {
+    width: 100%;
+    padding: 0 0.5em;
+    margin-bottom:3rem;
+    h3 {
+      margin-top:1rem;
+      margin-bottom: 0rem;
+      font-size: 26px;
+    }
+    p {
+      margin:0 0 1rem 0;
+    }
+  }
+}
+
+@media screen and (max-width:1400px) {
+  .posts{
+    main{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+@media screen and (max-width:1100px) {
+  .posts{
+    main{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+@media screen and (max-width:960px) {
+  .posts{
+    main{
+      grid-template-columns: 1fr;
+    }
   }
 }
 </style>

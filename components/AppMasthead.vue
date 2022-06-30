@@ -3,14 +3,21 @@
     <client-only>
       <AppImageZoom :src="image" :alt="heading" />
     </client-only>
-    <h1>{{ heading }}</h1>
+    <client-only>
+      <AppHeadlineAnimate />
+    </client-only>
   </section>
 </template>
 
 <script>
+import AppHeadlineAnimate from '@/components/AppHeadlineAnimate.vue'
+
 export default {
   name: 'Masthead',
-  props: ['heading','image']
+  props: ['heading','image'],
+  components: {
+    AppHeadlineAnimate
+  }
 };
 </script>
 
@@ -47,6 +54,4 @@ section.masthead {
     z-index:100;
   }
 }
-
-
 </style>
