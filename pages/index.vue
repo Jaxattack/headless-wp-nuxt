@@ -1,6 +1,14 @@
 <template>
   <div class="page page-index transition">
     <AppMasthead :image="heroImage"/>
+    <AppIntro :heading="introHeading" :copy="introCopy"/>
+    <v-container full>
+      <v-row>
+        <v-col>
+          <h3 class="section-head">Featured Posts</h3>
+        </v-col>
+      </v-row>
+    </v-container>
     <AppPostList/>
   </div>
 </template>
@@ -8,19 +16,23 @@
 <script>
 import AppMasthead from "@/components/AppMasthead.vue";
 import AppImageZoom from "@/components/AppImageZoom.vue";
+import AppIntro from "@/components/AppIntro.vue";
 import AppPostList from "@/components/AppPostList.vue";
 
 export default {
   components: {
     AppMasthead,
     AppImageZoom,
-    AppPostList
+    AppPostList,
+    AppIntro
   },
   data() {
     return {
       title: "Home",
-      heading: "Nuxt Boilerplate with Headless Wordpress",
+      heading: "Nuxt Headless WP",
       heroImage: "/mountains-masthead.jpg",
+      introHeading: "A modern front-end boilerplate utilizing the JAMStack and headless Wordpress for blistering fast websites",
+      introCopy: "Lorem ipsum dolor sit amet leuciano deploy faucet havana",
       currentUrl: "",
     };
   },
@@ -75,17 +87,28 @@ html,body{
   background: $black;
 }
 .page-index {
+  .headline-container{
+    h2{
+      padding-left:0em;
+    }
+  }
   .posts{
-    padding:calc(2.5vw + 1.5em) 0;
+    &.wrapper{
+      padding-top:1rem;
+    }
   }
 }
 .wrapper{
-  padding-top:4em;
+  padding:4em 1.5em 0;
+
 }
 .container {
   width:100%;
   max-width:960px;
   margin:0 auto;
+  &.full{
+    max-width:calc(100% - 3rem);
+  }
 }
 a,
 a:active,
@@ -95,21 +118,5 @@ a:visited {
 }
 img {
   width:100%;
-}
-a.button {
-  display: inline-block;
-  font-size: .7rem;
-  text-transform: uppercase;
-  padding: 15px 15px;
-  letter-spacing: 2px;
-  position: relative;
-  border:1px solid $grey;
-  border-radius:.3em;
-  &:hover{
-    border-color:$white;
-  }
-  &:active, &:focus{
-    border-color:$white;
-  }
 }
 </style>

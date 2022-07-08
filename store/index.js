@@ -2,7 +2,7 @@ const siteURL = "https://www.lancejackson.co.nz/headless_wordpress"
 
 export const state = () => ({
   posts: [],
-  headlineAnimate: 'Nuxt Boilerplate with headless Wordpress'
+  headlineAnimate: 'Nuxt Headless WP Boilerplate'
 })
 
 export const mutations = {

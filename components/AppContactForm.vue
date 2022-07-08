@@ -8,7 +8,7 @@
 				</ul>
 			</div>
 			<div>
-				<label for="your-name">your name</label>
+				<label for="your-name">Your name</label>
 				<input id="your-name" v-model="name" type="text" name="your-name">
 			</div>
 			<div>
@@ -99,7 +99,7 @@ export default {
  * Basic Form Styles
  */	
  label {
- 	margin:.3rem 0 0;
+ 	margin:0;
  	min-width:100px;
  	display: block;
 }
@@ -127,7 +127,7 @@ input[type=text],
 input[type=password],
 textarea,
 select {
-	margin:.5em 0;
+	margin:.5em 0 1em 0;
 	padding:10px;
 	width:100%;
 	max-width:800px;

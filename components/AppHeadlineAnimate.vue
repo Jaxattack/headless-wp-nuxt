@@ -1,5 +1,5 @@
 <template>
-	<h1>{{ theHeading }}</h1>
+	<h1 v-html="theHeading"></h1>
 </template>
 
 <script>

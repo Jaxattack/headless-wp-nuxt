@@ -24,6 +24,7 @@ picture{
 	overflow:hidden;
 	display: flex;
 	width:100%;
+	height:33vh;
 	border-radius:0.3em;
 }
 img{

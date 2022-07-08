@@ -1,11 +1,34 @@
 <template>
   <div class="page page-contact transition">
-    <section class="wrapper">
-      <div class="container">
-        <h1>Contact</h1>
-        <AppContactForm />  
-      </div>
-    </section>
+      <v-container full>
+        <v-row>
+          
+        </v-row>
+        <v-row>
+          <v-col cols="4">
+            <h1>Contact</h1>
+          </v-col>
+          <v-col cols="4">
+            <div class="form-wrapper">
+              <div class="form-container">
+                <AppContactForm />  
+              </div>          
+            </div>
+          </v-col>
+          <v-col cols="1">
+          </v-col>
+          <v-col cols="3">
+            <div class="contact-details-container">
+              <h2>Where to find us</h2>
+              <p>123 Thisisour Address street,<br>
+              City,<br>
+              Country</p>
+              <NuxtLink to="/">Phone</NuxtLink>
+              <NuxtLink to="/">Email</NuxtLink>
+            </div>
+          </v-col>
+        </v-row>      
+      </v-container>
   </div>
 </template>
 
@@ -52,6 +75,6 @@ export default {
 
 <style lang="scss" scoped>
 .page-contact {
-
+  padding-top: 8em;
 }
 </style>

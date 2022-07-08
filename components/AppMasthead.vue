@@ -26,7 +26,7 @@ export default {
 
 section.masthead {
   width: 100%;
-  height: 60vh;
+  height: calc(100vh - 4rem);
   overflow: hidden;
   position:relative;
   text-align: center;
@@ -37,7 +37,7 @@ section.masthead {
   color: #333;
   picture{
     width: 100%;
-    height: 60vh;
+    height: calc(100vh - 4rem);
     position:absolute;
     top:0;
     left:0;
@@ -46,6 +46,8 @@ section.masthead {
     z-index:1;
     object-fit: cover;
     object-position: center;
+    border-radius:0;
+    opacity:0.3;
   }
   h1 {
     color: white;

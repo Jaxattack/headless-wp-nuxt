@@ -2,15 +2,18 @@
   <main class="page page-post-single post transition">
     <div class="wrapper">
       <div class="container">
-        
-        <h1>{{ post.title.rendered }}</h1>
+        <div class="post-single-content-container">
+          <h1>{{ post.title.rendered }}</h1>
+        </div>
 
         <client-only>
           <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
         </client-only>
         
-        <h3>{{ post.acf.description }}</h3>
-        <p>{{ post.acf.body_copy }}</p>        
+        <div class="post-single-content-container">
+          <h3>{{ post.acf.description }}</h3>
+          <p>{{ post.acf.body_copy }}</p>
+        </div>        
       </div>
     </div>
   </main>
@@ -71,6 +74,10 @@ export default {
 .page-post-single {
   picture{
     margin-bottom:2em;
+  }
+  .post-single-content-container{
+    max-width:75%;
+    margin:0 auto;
   }
 }
 </style>

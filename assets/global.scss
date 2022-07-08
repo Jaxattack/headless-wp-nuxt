@@ -1,5 +1,10 @@
 // Main SCSS Global Styles
 
+.row{
+  margin:0px -24px !important;
+  margin-top:3rem;
+}
+
 .transition{
   position:relative;
 }
@@ -11,4 +16,38 @@
 .page-enter,
 .page-leave-to {
   opacity: 0;
+}
+
+// Button
+
+.button {
+  display: inline-block;
+  font-size: .7rem;
+  text-transform: uppercase;
+  padding: 15px 15px;
+  letter-spacing: 2px;
+  position: relative;
+  border:1px solid $grey;
+  border-radius:.3em;
+  position:relative;
+  span{
+    color:$grey;
+    position:absolute;
+    right:24px;
+    transition:all 150ms;
+  }
+  &:hover{
+    border-color:$white;
+    span{
+      color:$white;
+      right:0px;
+    }
+  }
+  &:active, &:focus{
+    border-color:$white;
+    span{
+      color:$white;
+      right:0px;
+    }
+  }
 }
