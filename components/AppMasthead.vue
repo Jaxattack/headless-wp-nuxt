@@ -53,6 +53,7 @@ section.masthead {
     color: white;
     margin-bottom:0;
     position:relative;
+    top:-1.25rem;
     z-index:100;
   }
 }

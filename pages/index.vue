@@ -31,7 +31,7 @@ export default {
       title: "Home",
       heading: "Nuxt Headless WP",
       heroImage: "/mountains-masthead.jpg",
-      introHeading: "A modern front-end boilerplate utilizing the JAMStack and headless Wordpress for blistering fast websites",
+      introHeading: "A modern front-end boilerplate utilizing the JAMStack and headless Wordpress for blistering fast static websites",
       introCopy: "Lorem ipsum dolor sit amet leuciano deploy faucet havana",
       currentUrl: "",
     };

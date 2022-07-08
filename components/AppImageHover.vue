@@ -29,11 +29,11 @@ picture{
 }
 img{
 	object-fit: cover;
+	transform:scale(1.03);
 	will-change: transform;
-	transition: transform 400ms ease;
+	transition: transform 600ms ease;
 	&:hover{
-		transition: transform 300ms ease;
-		transform: scale(1.01);
+		transform: scale(1);
 	}
 }
 </style>

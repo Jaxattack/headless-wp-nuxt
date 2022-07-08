@@ -58,8 +58,8 @@
     .post-content{
       &:hover{
         img{
-          transition: transform 300ms ease;
-          transform: scale(1.01);
+          transition: transform 600ms ease;
+          transform: scale(1);
         }
         .button{
           border-bottom:1px solid $white;

@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="container">
         <div class="post-single-content-container">
-          <h1>{{ post.title.rendered }}</h1>
+          
         </div>
 
         <client-only>
@@ -11,6 +11,7 @@
         </client-only>
         
         <div class="post-single-content-container">
+          <h1>{{ post.title.rendered }}</h1>
           <h3>{{ post.acf.description }}</h3>
           <p>{{ post.acf.body_copy }}</p>
         </div>        
