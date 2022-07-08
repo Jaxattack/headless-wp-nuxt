@@ -94,7 +94,6 @@
         letter-spacing: 2px;
         position: relative;
         padding-left:2px;
-        border:1px solid $grey;
         border-top:1px solid $grey;
         border-bottom:0px solid $grey;
         border-left:none;

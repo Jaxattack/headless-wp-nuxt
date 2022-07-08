@@ -107,9 +107,9 @@ input[type=text],
 input[type=password],
 textarea,
 select {
-    border:2px solid $grey;
+    border:1px solid $grey;
     border-radius:8px;
-    background:transparent;
+    background:#131313;
     color:$white;
     font-family: "Open Sans", sans-serif;
     font-size:.9rem;
@@ -122,6 +122,9 @@ input[type=password]:focus,
 input.text:focus,
 input.title:focus,
 textarea:focus {
+    border:1px solid $grey;
+    outline:1px $grey;
+    background:$grey;
 }
 input[type=text],
 input[type=password],
@@ -136,25 +139,7 @@ textarea {
 	height:250px;
 	resize:none;
 }
-input[type="submit"] {
-  display: inline-block;
-  font-size: .7rem;
-  text-transform: uppercase;
-  padding: 15px 15px;
-  letter-spacing: 2px;
-  position: relative;
-  background:transparent;
-  color:$white;
-  border:1px solid $grey;
-  border-radius:.3em;
-  &:hover{
-    border-color:$white;
-    cursor:pointer;
-  }
-  &:active, &:focus{
-    border-color:$white;
-  }
-}
+
 .success {
 	color:#264409;
 	border:1px solid green;

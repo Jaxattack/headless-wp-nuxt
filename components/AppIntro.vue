@@ -39,8 +39,8 @@
 
 <style lang="scss" scoped>
 	.container{
-		padding-top:2rem;
-		padding-bottom:5rem;
+		padding-top:3rem;
+		min-height:50vh;
 		h3{
 			margin-bottom:2rem;
 		}
@@ -49,14 +49,14 @@
 		}
 		.tag{
 			display:inline-block;
-			margin-right:.4rem;
-			margin-bottom:.5rem;
-			padding: .6rem 1.2rem;
+			margin-right:.3rem;
+			margin-bottom:.4rem;
+			padding: .6rem 1.4rem;
 			font-size: 1rem;
 			border:1px solid $grey;
   			border-radius:10rem;
   			&:hover{
-  				border-color:$white;
+    			background:$grey;
   			}
 		}
 	}

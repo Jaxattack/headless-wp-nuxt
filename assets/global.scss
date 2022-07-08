@@ -20,11 +20,11 @@
 
 // Button
 
-.button {
+.button, input[type="submit"] {
   display: inline-block;
   font-size: .7rem;
   text-transform: uppercase;
-  padding: 15px 15px;
+  padding: 15px 30px;
   letter-spacing: 2px;
   position: relative;
   border:1px solid $grey;
@@ -40,14 +40,14 @@
     border-color:$white;
     span{
       color:$white;
-      right:0px;
+      right:2px;
     }
   }
   &:active, &:focus{
     border-color:$white;
     span{
       color:$white;
-      right:0px;
+      right:2px;
     }
   }
 }

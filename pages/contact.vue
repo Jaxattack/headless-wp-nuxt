@@ -12,7 +12,7 @@
         <v-row>
           <v-col cols="5">
             <div class="contact-details-container">
-              <h2>Where to find us</h2>
+              <h3>Where to find us</h3>
               <p>123 Thisisour Address street,<br>
               City,<br>
               Country</p>
