@@ -8,7 +8,9 @@
           </v-col>
         </v-row>
         <v-row>
-          <v-col cols="5">
+          <v-col cols="2">
+          </v-col>
+          <v-col cols="3">
             <div class="contact-details-container">
               <h3>Where to find us</h3>
               <p>123 Thisisour Address street,<br>

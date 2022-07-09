@@ -25,7 +25,7 @@
 	      	"VueJS",
 	      	"SASS",
 	      	"Greensock Animation Plugin",
-	      	"Vuetify Grid System",
+	      	"Vuetify Grid",
 	      	"Adobe Fonts"
 	      ]
 	    };
@@ -36,7 +36,7 @@
 <style lang="scss" scoped>
 	.container{
 		padding-top:1rem;
-		padding-bottom:6rem;
+		padding-bottom:8rem;
 		h3{
 			margin-bottom:2rem;
 		}

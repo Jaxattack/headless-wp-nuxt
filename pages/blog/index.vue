@@ -63,6 +63,6 @@ export default {
 
 <style lang="scss">
 .page-posts {
-  padding-top: 8em;
+  padding-top: 3em;
 }
 </style>

@@ -85,7 +85,7 @@
         position: relative;
         padding-left:2px;
         border-top:1px solid $grey;
-        border-bottom:0px solid $grey;
+        border-bottom:1px solid $grey;
         border-left:none;
         border-right:none;
         border-radius:0;
