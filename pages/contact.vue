@@ -1,12 +1,10 @@
 <template>
   <div class="page page-contact transition">
-      <v-container>
-        <v-row>
-          
-        </v-row>
+    <section>
+      <v-container full>
         <v-row>
           <v-col cols="12">
-            <h1>Contact</h1>
+            <h1>Get in touch</h1>
           </v-col>
         </v-row>
         <v-row>
@@ -29,6 +27,7 @@
           </v-col>
         </v-row>      
       </v-container>
+    </section>
   </div>
 </template>
 

@@ -1,15 +1,32 @@
 <template>
   <div class="page page-index transition">
-    <AppMasthead :image="heroImage"/>
-    <AppIntro :heading="introHeading" :copy="introCopy"/>
-    <v-container full>
-      <v-row>
-        <v-col>
-          <h3 class="section-head">Featured Posts</h3>
-        </v-col>
-      </v-row>
-    </v-container>
-    <AppPostList/>
+    <section>
+      <v-container full>
+        <v-row>
+          <v-col>
+            <h1 class="section-head">JAMStack with <NuxtLink to="/blog">Nuxt</NuxtLink></h1>
+          </v-col>
+        </v-row>
+      </v-container>
+      <AppIntro :heading="introHeading" :copy="introCopy"/>
+      <v-container full>
+        <v-row>
+          <v-col>
+            <h3 class="section-head">Latest Posts<NuxtLink to="/blog">See all</NuxtLink></h3>
+          </v-col>
+        </v-row>
+        <AppPostList/>
+      </v-container>
+      
+      <v-container full >
+        <v-row>
+          <v-col>
+            <h3 class="section-head">Scroll Transitions<NuxtLink to="/blog">See all</NuxtLink></h3>
+            <AppMasthead :image="heroImage"/>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
   </div>
 </template>
 
@@ -81,12 +98,15 @@ html,body{
 }
 .page {
   margin: 0 auto;
-  padding-top: 4em;
+  padding-top: 8em;
   padding-bottom:4em;
   min-height:calc(100vh - 4em);
   background: $black;
 }
 .page-index {
+  h1{
+    margin-bottom:0;
+  }
   .headline-container{
     h2{
       padding-left:0em;
@@ -99,12 +119,11 @@ html,body{
   }
 }
 .wrapper{
-  padding:4em 1.5em 0;
+  padding:3em 1.5em 0;
 
 }
 .container {
-  width:100%;
-  max-width:960px;
+  max-width:1200px;
   margin:0 auto;
   &.full{
     max-width:calc(100% - 3rem);

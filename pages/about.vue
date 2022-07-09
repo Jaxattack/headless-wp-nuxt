@@ -1,17 +1,24 @@
 <template>
   <div class="page page-about transition">
-    <section class="wrapper">
-      <div class="container">
-        <h1>About</h1>
-        <p>We don't really know where this goes - and I'm not sure we really care. If these lines aren't straight, your water's going to run right out of your painting and get your floor wet. If you do too much it's going to lose its effectiveness.</p>
-        <p>You create the dream - then you bring it into your world. We don't need any guidelines or formats. All we need to do is just let it flow right out of us. Poor old tree. Maybe there's a little something happening right here.</p>
-        <p>I like to beat the brush. You want your tree to have some character. Make it special. We don't have to be committed. We are just playing here. If it's not what you want - stop and change it. Don't just keep going and expect it will get better. But they're very easily killed. Clouds are delicate.</p>
-        <p>A fan brush can be your best friend. We don't have to be concerned about it. We just have to let it fall where it will. Now, we're going to fluff this cloud. In your world you can create anything you desire. You're meant to have fun in life.</p>
-        <p>I started painting as a hobby when I was little. I didn't know I had any talent. I believe talent is just a pursued interest. Anybody can do what I do. All you need is a dream in your heart, and an almighty knife. Clouds are free they come and go as they please. Even trees need a friend. We all need friends. Talent is a pursued interest. That is to say, anything you practice you can do.</p>
-        <p>We touch the canvas, the canvas takes what it wants. Just a happy little shadow that lives in there. I thought today we would make a happy little stream that's just running through the woods here. We must be quiet, soft and gentle. Zip. That easy.</p>
-        <p>I like to beat the brush. You want your tree to have some character. Make it special. We don't have to be committed. We are just playing here. If it's not what you want - stop and change it. Don't just keep going and expect it will get better. But they're very easily killed. Clouds are delicate.</p>        
-      </div>
-    </section>
+    <section>
+      <v-container full>
+          <v-row>
+            <v-col cols="12">
+              <h1>About</h1>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="4"></v-col>
+            <v-col cols="8">
+              <div class="text-columns-2">
+                <p>Lorem ipsum dolor sit amet, numquam principes vel no, usu eu agam natum intellegam, molestie dissentiunt vim et. Vis duis persecuti efficiendi ea. Ea duo mundi voluptatum, pro eu elitr nostrud, ex congue putant nec. Sed ornatus disputando deterruisset ex.</p>
+                <p>Mel molestie inimicus accusamus in, cu mei nonumes vulputate, qui cu essent praesent. Tale sonet persius nec cu, id per solum rebum albucius. Et his dico inimicus, habeo delenit ad has. Quo ex augue suscipit vituperatoribus, an mea feugait mediocritatem, no ferri paulo eos. Brute referrentur intellegebat ad mei, omnes molestie deseruisse sed id. Ex agam phaedrum aliquando quo, impetus atomorum ne has. Ius et placerat interesset neglegentur, primis aeterno cu usu, pro ut soluta omittam.</p>
+                <p>Ea invenire tincidunt vis, an aeque maiorum euripidis mel. Hinc convenire ei quo. Cu pro erant alienum corpora, vis te facer molestie. Ex wisi probatus nec, ea fugit nullam laoreet usu, vim ut sint quaeque molestie. Sint paulo omnium pri id. Est amet omnes maluisset at, at qui illum vituperata, duo ad quem adipiscing.</p>
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
+      </section>
   </div>
 </template>
 
@@ -53,6 +60,10 @@ export default {
 
 <style lang="scss" scoped>
 .page-about {
-
+  padding-top: 8em;
+  .text-columns-2{
+    column-count: 2;
+    column-gap:3rem;
+  }
 }
 </style>

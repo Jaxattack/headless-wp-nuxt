@@ -24,14 +24,14 @@ picture{
 	overflow:hidden;
 	display: flex;
 	width:100%;
-	height:33vh;
+	height:20vw;
 	border-radius:0.3em;
 }
 img{
 	object-fit: cover;
 	transform:scale(1.03);
 	will-change: transform;
-	transition: transform 600ms ease;
+	transition: transform 150ms ease-out;
 	&:hover{
 		transform: scale(1);
 	}

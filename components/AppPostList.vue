@@ -1,24 +1,22 @@
 <template>
-  <section class="posts wrapper">
-    <main>
-      <div class="post" v-for="post in posts" :key="post.id">
-        <nuxt-link :to="`blog/${post.slug}`">
-          <div class="post-content">
-            <client-only>
-              <AppImageHover :src="post.acf.hero_image" :alt="post.acf.client_name" />
-            </client-only>
-            <div class="post-content-copy">
-              <h3>
-                {{ post.title.rendered }}
-              </h3>
-              <p>{{ post.acf.description }}</p>
+      <v-row>
+        <v-col cols="4" class="post" v-for="post in posts" :key="post.id">
+          <nuxt-link :to="`blog/${post.slug}`">
+            <div class="post-content">
+              <client-only>
+                <AppImageHover :src="post.acf.hero_image" :alt="post.acf.client_name" />
+              </client-only>
+              <div class="post-content-copy">
+                <h3>
+                  {{ post.title.rendered }}
+                </h3>
+                <p>{{ post.acf.description }}</p>
+              </div>
+              <div class="button" >Go To Page <span>➔</span></div>          
             </div>
-            <div class="button" >Go To Page <span>➔</span></div>          
-          </div>
-        </nuxt-link>
-      </div>
-    </main>
-  </section>
+          </nuxt-link>
+        </v-col>
+      </v-row>
 </template>
 
 <script>
@@ -44,21 +42,13 @@
 </script>
 
 <style lang="scss">
-.posts{
-  max-width:100%;
-  margin:0 auto;
-  main{  
-    display:  grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 12px;
-  }
   .post{
     width: 100%;
     margin-bottom:2rem;
     .post-content{
       &:hover{
         img{
-          transition: transform 600ms ease;
+          transition: transform 150ms ease-out;
           transform: scale(1);
         }
         .button{
@@ -103,27 +93,5 @@
       }
     }
   }
-}
 
-@media screen and (max-width:1400px) {
-  .posts{
-    main{
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-}
-@media screen and (max-width:1100px) {
-  .posts{
-    main{
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-}
-@media screen and (max-width:960px) {
-  .posts{
-    main{
-      grid-template-columns: 1fr;
-    }
-  }
-}
 </style>

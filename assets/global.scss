@@ -34,7 +34,7 @@
     color:$grey;
     position:absolute;
     right:24px;
-    transition:all 150ms;
+    transition:all 150ms ease-out;
   }
   &:hover{
     border-color:$white;

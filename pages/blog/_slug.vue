@@ -1,22 +1,33 @@
 <template>
   <main class="page page-post-single post transition">
-    <div class="wrapper">
-      <div class="container">
-        <div class="post-single-content-container">
-          
-        </div>
+    <section>
+      <v-container full>
+        <v-row>
+          <v-col cols="6">
+            <client-only>
+            <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
+          </client-only>
+          </v-col>
+          <v-col cols="1">
+          </v-col>
+          <v-col cols="4">
+            <h1>{{ post.title.rendered }}</h1>
+            <div class="post-single-body-container">
+              <h3>{{ post.acf.description }}</h3>
+              <p>{{ post.acf.body_copy }}</p>
+            </div>
+          </v-col>
+          <v-col cols="1">
+          </v-col>
+        </v-row>
+      </v-container>
 
-        <client-only>
-          <AppImageZoom :src="post.acf.hero_image" :alt="post.title.rendered" />
-        </client-only>
-        
-        <div class="post-single-content-container">
-          <h1>{{ post.title.rendered }}</h1>
-          <h3>{{ post.acf.description }}</h3>
-          <p>{{ post.acf.body_copy }}</p>
-        </div>        
-      </div>
-    </div>
+      <v-container>
+        <v-row>
+          
+        </v-row>
+      </v-container>
+    </section>
   </main>
 </template>
 
@@ -50,7 +61,6 @@ export default {
     return {
       title: this.post.title.rendered,
       meta: [
-        // hid is used as unique identifier
         // Facebook OG Tags
         { hid: 'og:type', name: 'og:type', content: "website" },
         { hid: 'og:url', name: 'og:url', content: this.currentUrl },
@@ -73,12 +83,15 @@ export default {
 
 <style lang="scss" scoped>
 .page-post-single {
+  padding-top:8em;
   picture{
     margin-bottom:2em;
   }
   .post-single-content-container{
-    max-width:75%;
     margin:0 auto;
+    .post-single-body-container{
+      max-width:75%;   
+    }
   }
 }
 </style>

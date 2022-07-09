@@ -47,13 +47,12 @@ section.masthead {
     object-fit: cover;
     object-position: center;
     border-radius:0;
-    opacity:0.3;
   }
   h1 {
     color: white;
     margin-bottom:0;
     position:relative;
-    top:-1.25rem;
+    top:0rem;
     z-index:100;
   }
 }

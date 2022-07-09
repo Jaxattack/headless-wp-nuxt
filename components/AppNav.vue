@@ -73,7 +73,8 @@ nav.nav {
       opacity: 1;
     }
     &.nuxt-link-exact-active{
-      font-weight:600;
+      text-decoration:underline;
+      text-decoration-line: all;
     }
   }
 }

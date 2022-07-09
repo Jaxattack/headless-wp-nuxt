@@ -1,6 +1,15 @@
 <template>
   <div class="page page-posts transition">
-    <AppPostList/>
+    <section>
+      <v-container full>
+        <v-row>
+          <v-col>
+            <h1>Posts</h1>
+          </v-col>
+        </v-row>        
+        <AppPostList/>
+      </v-container>
+    </section>
   </div>
 </template>
 
@@ -54,6 +63,6 @@ export default {
 
 <style lang="scss">
 .page-posts {
-
+  padding-top: 8em;
 }
 </style>

@@ -1,9 +1,10 @@
 html{
-	font-family: neue-haas-grotesk-text, sans-serif;
+	font-family: neue-haas-grotesk-display, sans-serif;
 	font-weight: 400;
 	font-style: normal;
   font-size: 1vw;
-  line-height:1.45;
+  line-height:1.55;
+  letter-spacing:0.04em;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -13,25 +14,32 @@ html{
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-family: neue-haas-grotesk-display, sans-serif;
 	font-weight: 300;
 	letter-spacing:.05em;
 }
 h1{
-	font-size:4em;
+	font-size:5em;
 	line-height:1.2;
 	margin-bottom:2rem;
+  font-weight: 500;
+  letter-spacing: 0em;
 }
 h2{
 	font-size:2.5em;
 }
 h3{
-	font-size:1.1em;
-	font-weight: 600;
+	font-size:1.6vw;
 	&.section-head{
-		padding-bottom:1rem;
+		display:flex;
+		flex:1;
+		justify-content:space-between;
+		padding-bottom:0.5rem;
 		margin-bottom:1rem;
 		border-bottom:1px solid $grey;
+		position:relative;
+		a{
+			display: flex;
+		}
 	}
 }
 h4{
@@ -45,7 +53,8 @@ h6{
 }
 
 p{
-  margin: 15px 0 20px;
+	font-family: neue-haas-grotesk-text, sans-serif;
+  margin: 0px 0 1rem 0px;
 }
 
 ul{
@@ -55,15 +64,21 @@ ul{
 
 	}
 }
-
 hr{
 
+}
+a{
+	font-family: neue-haas-grotesk-display, sans-serif;
+}
+
+nav a{
+	font-family: neue-haas-grotesk-display, sans-serif;	
 }	
 
 @media screen and (max-width:1200px) {
 
 	html{
-		font-size:16px;
+		font-size:1vw;
 	}
 
 	.container{

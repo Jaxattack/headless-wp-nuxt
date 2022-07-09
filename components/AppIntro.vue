@@ -5,15 +5,11 @@
 				
 				<h2>{{ heading }}</h2></v-col>
 			<v-col cols="2"></v-col>
-			<v-col cols="3">
-				<h3 class="section-head">
-					Dependencies
-				</h3>
+			<v-col cols="4">
 				<ul>
 					<li class="tag" v-for="listItem in listItems">{{ listItem }}</li>
 				</ul>
 			</v-col>
-			<v-col cols="1"></v-col>
 		</v-row>
 	</v-container>
 </template>
@@ -26,10 +22,10 @@
 	    return {
 	      listItems: [
 	      	"Nuxt",
-	      	"Vue",
+	      	"VueJS",
 	      	"SASS",
-	      	"GSAP",
-	      	"Vuetify Grid",
+	      	"Greensock Animation Plugin",
+	      	"Vuetify Grid System",
 	      	"Adobe Fonts"
 	      ]
 	    };
@@ -39,8 +35,8 @@
 
 <style lang="scss" scoped>
 	.container{
-		padding-top:3rem;
-		min-height:50vh;
+		padding-top:1rem;
+		padding-bottom:6rem;
 		h3{
 			margin-bottom:2rem;
 		}
@@ -48,11 +44,12 @@
 			
 		}
 		.tag{
+			font-family: neue-haas-grotesk-display, sans-serif;
 			display:inline-block;
 			margin-right:.3rem;
 			margin-bottom:.4rem;
 			padding: .6rem 1.4rem;
-			font-size: 1rem;
+			font-size: 1.6vw;
 			border:1px solid $grey;
   			border-radius:10rem;
   			&:hover{
