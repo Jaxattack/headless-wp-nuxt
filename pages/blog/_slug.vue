@@ -1,6 +1,6 @@
 <template>
   <main class="page page-post-single post transition">
-    <section>
+    <section class="page-bottom">
       <v-container full>
         <v-row>
           <v-col cols="6">
@@ -13,7 +13,7 @@
           <v-col cols="4">
             <h1>{{ post.title.rendered }}</h1>
             <div class="post-single-body-container">
-              <h3>{{ post.acf.description }}</h3>
+              <h4 class="section-head">{{ post.acf.description }}</h4>
               <p>{{ post.acf.body_copy }}</p>
             </div>
           </v-col>
@@ -83,7 +83,6 @@ export default {
 
 <style lang="scss" scoped>
 .page-post-single {
-  padding-top:8em;
   picture{
     margin-bottom:2em;
   }

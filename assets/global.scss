@@ -1,8 +1,6 @@
 // Main SCSS Global Styles
 
 .row{
-  margin:0px -24px !important;
-  margin-top:3rem;
 }
 
 .transition{
@@ -37,7 +35,6 @@
     transition:all 150ms ease-out;
   }
   &:hover{
-    border-color:$white;
     span{
       color:$white;
       right:2px;

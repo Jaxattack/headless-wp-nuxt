@@ -3,9 +3,6 @@
     <client-only>
       <AppImageZoom :src="image" :alt="heading" />
     </client-only>
-    <client-only>
-      <AppHeadlineAnimate />
-    </client-only>
   </section>
 </template>
 
@@ -46,7 +43,6 @@ section.masthead {
     z-index:1;
     object-fit: cover;
     object-position: center;
-    border-radius:0;
   }
   h1 {
     color: white;

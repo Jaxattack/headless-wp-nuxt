@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-nav.nav {
+nav {
   position:fixed;
   top:0;
   left:0;

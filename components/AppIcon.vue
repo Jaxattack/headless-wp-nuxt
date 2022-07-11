@@ -6,9 +6,6 @@
       viewBox="0 0 295.9 57.8"
       :width="width"
       :height="height">
-    <style type="text/css">
-      .st0{fill:#FFFFFF;}
-    </style>
 <g>
   <g>
     <path class="st0" d="M23.6,20.6v5H0V0.4h5.8v20.2H23.6z"/>
@@ -65,5 +62,13 @@ export default {
 svg {
   vertical-align: middle;
   margin-right: 10px;
+  &:hover{
+    .st0{
+      fill:$highlight;
+    }
+  }
+}
+.st0{
+  fill:$white;
 }
 </style>

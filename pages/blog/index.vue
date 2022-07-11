@@ -4,9 +4,18 @@
       <v-container full>
         <v-row>
           <v-col>
-            <h1>Posts</h1>
+            <h1>All Posts</h1>
           </v-col>
         </v-row>        
+      </v-container>
+    </section>
+    <section class="page-bottom">
+      <v-container full>
+        <v-row>
+          <v-col>
+            <h3 class="section-head">Latest Posts</h3>
+          </v-col>
+        </v-row>
         <AppPostList/>
       </v-container>
     </section>
@@ -63,6 +72,6 @@ export default {
 
 <style lang="scss">
 .page-posts {
-  padding-top: 3em;
+
 }
 </style>

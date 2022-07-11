@@ -1,14 +1,18 @@
 <template>
   <div class="page page-index transition">
+    <div class="circle-absolute-p">
+      <div class="circle-absolute-p-inner"></div>
+    </div>
     <section>
       <v-container full>
         <v-row>
           <v-col>
-            <h1 class="section-head">JAMStack with <NuxtLink to="/blog">Nuxt</NuxtLink></h1>
+            <h1>A blistering fast modern front-end boilerplate <br>built on the JAMStack+<a :href="features[index].url">{{ features[index].name }}</a></h1>
           </v-col>
         </v-row>
       </v-container>
-      <AppIntro :heading="introHeading" :copy="introCopy"/>
+    </section>
+    <section>
       <v-container full>
         <v-row>
           <v-col>
@@ -17,12 +21,15 @@
         </v-row>
         <AppPostList/>
       </v-container>
-      
-      <v-container full >
+    </section>
+    <section class="page-bottom">
+      <v-container full>
         <v-row>
           <v-col>
-            <h3 class="section-head">Scroll Transitions<NuxtLink to="/blog">See all</NuxtLink></h3>
-            <AppMasthead :image="heroImage"/>
+            <h1>Nuxt+Wordpress</h1>
+          </v-col>
+          <v-col cols="8">
+            <h2 class="indent">JAMStack is an architecture designed to make the web faster, more secure, and easier to scale. The core principles of pre-rendering and decoupling enable JAMStack websites and applications to be delivered with greater speed, confidence and resilience than ever before.</h2>
           </v-col>
         </v-row>
       </v-container>
@@ -33,7 +40,7 @@
 <script>
 import AppMasthead from "@/components/AppMasthead.vue";
 import AppImageZoom from "@/components/AppImageZoom.vue";
-import AppIntro from "@/components/AppIntro.vue";
+import Intro from "@/components/AppIntro.vue";
 import AppPostList from "@/components/AppPostList.vue";
 
 export default {
@@ -41,16 +48,28 @@ export default {
     AppMasthead,
     AppImageZoom,
     AppPostList,
-    AppIntro
+    Intro
   },
   data() {
     return {
-      title: "Home",
-      heading: "Nuxt Headless WP",
-      heroImage: "/mountains-masthead.jpg",
-      introHeading: "A modern front-end boilerplate utilizing the JAMStack and headless Wordpress for blistering fast static websites",
-      introCopy: "Lorem ipsum dolor sit amet leuciano deploy faucet havana",
       currentUrl: "",
+      title: "JAMStack+",
+      heading: "JAMStack+",
+      heroImage: "/mountains-masthead.jpg",
+      heroDependencies: "",
+      introHeading: "A modern front-end boilerplate built on Nuxt and headless Wordpress for blistering fast, SEO-optimized websites",
+      introCopy: "Lorem ipsum dolor sit amet leuciano deploy faucet havana",
+      index: 0,
+      features: [
+        {name:"Nuxt",url:"https://nuxtjs.org/"},
+        {name:"VueJS",url:"https://vuejs.org/"},
+        {name:"SASS",url:"https://sass-lang.com/"},
+        {name:"Greensock AP",url:"https://greensock.com/"},
+        {name:"Vuetify Grid",url:"https://vuetifyjs.com/en/components/grids/"},
+        {name:"Adobe Fonts",url:"https://fonts.adobe.com"},
+        {name:"Wordpress CMS",url:"https://wordpress.com/"},
+        {name:"Netlify Auto Deploy",url:"https://www.netlify.com/"}
+      ]
     };
   },
   computed: {
@@ -59,10 +78,33 @@ export default {
     }
   },
   methods: {
+    animateOnScroll() {
+      gsap.to(".container", { // Animate selector
+        // Whatever properties are animated
+
+        y:300,
+        scrollTrigger: {
+          trigger: ".container", // make .panel2 the trigger
+          start: "20% bottom", // 10% of .panel2 enters the bottom of the viewport\
+        }
+      });
+    },
+    updateFeatures () {
+      setTimeout(() => {
+        this.index += 1;
+        if (this.index >= this.features.length) {
+          this.index = 0;
+        }   
+        this.updateFeatures()
+      }, 1500);
+    },
   },
   created() {
     this.$store.dispatch("getPosts");
     let currentUrl = this.$route.path;
+  },
+  mounted() {
+    this.updateFeatures();
   },
   head() {
     return {
@@ -98,7 +140,7 @@ html,body{
 }
 .page {
   margin: 0 auto;
-  padding-top: 8em;
+  padding-top: 6em;
   padding-bottom:4em;
   min-height:calc(100vh - 4em);
   background: $black;
@@ -119,14 +161,18 @@ html,body{
   }
 }
 .wrapper{
-  padding:3em 1.5em 0;
-
+}
+section{
+  padding-bottom:7rem;
+  &.page-bottom{
+    padding-bottom:0rem;
+  }
 }
 .container {
   max-width:1200px;
   margin:0 auto;
   &.full{
-    max-width:calc(100% - 3rem);
+    max-width:calc(100% - 24px);
   }
 }
 a,
@@ -134,6 +180,7 @@ a:active,
 a:visited {
   text-decoration: none;
   color: $white;
+  text-decoration-color:$grey;
 }
 img {
   width:100%;
