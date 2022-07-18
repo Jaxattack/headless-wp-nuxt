@@ -64,6 +64,9 @@ h4{
   margin-bottom: 1em;
   padding-top: 1em;
   border-top: 1px solid #222;
+	&:not(:first-of-type){
+		margin-top:2em;
+	}
 }
 h5{
 	font-weight: 600;
@@ -72,15 +75,20 @@ h6{
 
 }
 p{
+	letter-spacing:.04em;
   margin: 0px 0 1rem 0px;
 	text-indent:1rem;
+	&.no-indent{
+		text-indent:0rem;
+	}
+	b{
+		font-weight:600;
+		letter-spacing:.03em;
+	}
 }
 ul{
 	padding:0;
 	list-style:none;
-	li{
-
-	}
 	.tag{
 		display:inline-block;
 		margin-right:.3rem;
@@ -93,9 +101,17 @@ ul{
   			background:$grey;
 			}
 	}
-	.v-list-item{
-		padding: .6rem 0rem;
+	.list-item{
+		padding: 1em 0 1em 0;
 		border-top:1px solid $grey;
+		display:flex;
+		align-items:flex-start;
+		*{
+			padding:0 inherit;;
+		}
+		p{
+			margin:0;
+		}
 	}
 }
 hr{

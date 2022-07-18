@@ -51,10 +51,6 @@
     width: 100%;
     .post-content{
       &:hover{
-        img{
-          transition: transform 150ms ease-out;
-          transform: scale(1);
-        }
         .button{
             color:$highlight;
           span{
@@ -95,5 +91,4 @@
       }
     }
   }
-
 </style>

@@ -9,6 +9,53 @@
         </v-row>
       </v-container>
     </section>
+    <section>
+      <v-container full>
+        <v-row>
+          <v-col cols="5">
+          </v-col>
+          <v-col>
+            <h3>Boilerplate Features</h3>
+            <ul>
+                <li class="list-item" v-for="listItem in listItems">
+                  <v-row>
+                    <v-col cols="6">
+                      <p class="no-indent"><b>{{ listItem.name }}</b></p>
+                    </v-col>
+                    <v-col>
+                      <p class="no-indent">{{ listItem.copy }}</p>
+                    </v-col>
+                  </v-row>
+                </li>
+            </ul>     
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+    <section class="image-grid">
+      <v-container full>
+        <v-row no-gutters>
+          <v-col>
+            <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
+          </v-col>
+          <v-col>
+          </v-col>
+          <v-col>
+            <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
+          </v-col>
+        </v-row>
+        <v-row no-gutters>
+          <v-col>
+            <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
+          </v-col>
+          <v-col>
+            <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
+          </v-col>
+          <v-col>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
     <section class="about-benefits">
       <v-container>
         <v-row>
@@ -27,20 +74,6 @@
               <p>Page loading speeds have an impact on user experience and conversion. Jamstack sites remove the need to generate page views on a server at request time by instead generating pages ahead of time during a build.</p>
               <p>With all the pages are already available on a CDN close to the user and ready to serve, very high performance is possible without introducing expensive or complex infrastructure.</p>
             </v-col>  
-        </v-row>
-      </v-container>
-    </section>
-    <section>
-      <v-container>
-        <v-row>
-          <v-col>
-            <h3>Boilerplate Features</h3>
-          </v-col>
-          <v-col cols="10">
-            <ul>
-                <li class="v-list-item" v-for="listItem in listItems">{{ listItem }}</li>
-            </ul>
-            </v-col>
         </v-row>
       </v-container>
     </section>
@@ -67,29 +100,24 @@
     </section>
     <section class="page-bottom image-grid">
       <v-container full>
-        <v-row>
-          <v-col cols="4"></v-col>
+        <v-row no-gutters>
           <v-col>
-            <v-row no-gutters>
-              <v-col>
-                <img class="grid-image" src="https://picsum.photos/id/11/1600/1000" alt="">
-              </v-col>
-              <v-col>
-                <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
-              </v-col>
-              <v-col>
-              </v-col>
-            </v-row>
-            <v-row no-gutters>
-              <v-col>
-                <img class="grid-image" src="https://picsum.photos/id/13/1600/1000" alt="">
-              </v-col>
-              <v-col>
-              </v-col>
-              <v-col>
-                <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
-              </v-col>
-            </v-row>
+            <img class="grid-image" src="https://picsum.photos/id/11/1600/1000" alt="">
+          </v-col>
+          <v-col>
+            <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
+          </v-col>
+          <v-col>
+          </v-col>
+        </v-row>
+        <v-row no-gutters>
+          <v-col>
+            <img class="grid-image" src="https://picsum.photos/id/13/1600/1000" alt="">
+          </v-col>
+          <v-col>
+          </v-col>
+          <v-col>
+            <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
           </v-col>
         </v-row>
       </v-container>
@@ -112,15 +140,14 @@ export default {
       description: "About Page Description",
       currentUrl: "",
       listItems: [
-        "Nuxt",
-        "VueJS",
-        "SASS",
-        "Greensock Animation Plugin",
-        "Vuetify Grid",
-        "Adobe Fonts",
-        "Headless Wordpress CMS",
-        "Netlify Auto Deploy",
-        "Social Metas"
+        {name: "Nuxt", copy: "VueJS framework for Static Site Generation"},
+        {name: "SASS", copy: "CSS preprocessor and minifier"},
+        {name: "Greensock Animation Plugin", copy: "Animation engine"},
+        {name: "Vuetify Grid", copy: "Lightweight flexbox based 12-point grid system"},
+        {name: "Adobe Fonts", copy: "Adobe web typeface library"},
+        {name: "Headless Wordpress CMS", copy: "Wordpress content management"},
+        {name: "Netlify Atomic Deploys", copy: "Automatic deploys on Git commit"},
+        {name: "Social Metas", copy: "Meta tag management  for SEO"}
       ]
     };
   },
@@ -131,8 +158,8 @@ export default {
           scrollTrigger: {
             trigger: el,
             scrub: true,
-            start: "top bottom",
-            end: "top center"
+            start: "top 80%",
+            end: "bottom 80%"
           },
           scale: .6,
           transformOrigin: "center center", 
