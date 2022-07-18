@@ -1,7 +1,7 @@
 <template>
   <div class="page page-about transition">
     <section class="about-hero">
-      <v-container full >
+      <v-container full>
         <v-row>
           <v-col cols="7">
             <h1>JAMStack architecture can bring an array of benefits to sites and project workflows.</h1>
@@ -34,7 +34,7 @@
       <v-container>
         <v-row>
           <v-col>
-            <h3>Features</h3>
+            <h3>Boilerplate Features</h3>
           </v-col>
           <v-col cols="10">
             <ul>
@@ -44,11 +44,11 @@
         </v-row>
       </v-container>
     </section>
-    <section class="about-benefits page-bottom">
+    <section class="about-benefits">
       <v-container>
         <v-row>
           <v-col>
-            <h2>All of the benefits of modern JavaScript development, with the client-facing familiarity of the Wordpress CMS</h2>
+            <h2 class="sticky">All of the benefits of modern JavaScript development, with the client-facing familiarity of the Wordpress CMS</h2>
           </v-col>
           <v-col cols="1">
           </v-col>
@@ -65,10 +65,46 @@
         </v-row>
       </v-container>
     </section>
+    <section class="page-bottom image-grid">
+      <v-container full>
+        <v-row>
+          <v-col cols="4"></v-col>
+          <v-col>
+            <v-row no-gutters>
+              <v-col>
+                <img class="grid-image" src="https://picsum.photos/id/11/1600/1000" alt="">
+              </v-col>
+              <v-col>
+                <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
+              </v-col>
+              <v-col>
+              </v-col>
+            </v-row>
+            <v-row no-gutters>
+              <v-col>
+                <img class="grid-image" src="https://picsum.photos/id/13/1600/1000" alt="">
+              </v-col>
+              <v-col>
+              </v-col>
+              <v-col>
+                <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
   </div>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export default {
   data() {
     return {
@@ -82,11 +118,35 @@ export default {
         "Greensock Animation Plugin",
         "Vuetify Grid",
         "Adobe Fonts",
-        "Headless Wordpress",
+        "Headless Wordpress CMS",
         "Netlify Auto Deploy",
         "Social Metas"
       ]
     };
+  },
+  methods: {
+    animateImageGrid() {
+      gsap.utils.toArray(".grid-image").forEach(el => {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            scrub: true,
+            start: "top bottom",
+            end: "top center"
+          },
+          scale: .6,
+          transformOrigin: "center center", 
+          ease: "none"
+        });
+      });
+    }
+  },
+  mounted() {
+    ScrollTrigger.refresh();
+    this.animateImageGrid();
+  },
+  beforeDestroy() {
+    ScrollTrigger.getAll().forEach(t => t.kill());
   },
   head() {
     return {
@@ -119,6 +179,10 @@ export default {
 .page-about {
   .about-hero,
   .about-benefits{
+  }
+  h2.sticky{
+    top:9rem;
+    position:sticky;
   }
   h3{
     margin-bottom:1em;

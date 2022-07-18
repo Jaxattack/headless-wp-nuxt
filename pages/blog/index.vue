@@ -4,19 +4,19 @@
       <v-container full>
         <v-row>
           <v-col>
-            <h1>All Posts</h1>
+            <h1>Posts</h1>
           </v-col>
         </v-row>        
       </v-container>
     </section>
     <section class="page-bottom">
       <v-container full>
-        <v-row>
+        <v-row justify="end">
           <v-col>
-            <h3 class="section-head">Latest Posts</h3>
+            <h3 class="section-head">All<span> {{ postCount }}</span></h3>
           </v-col>
         </v-row>
-        <AppPostList/>
+        <AppPostList limit="6"/>
       </v-container>
     </section>
   </div>
@@ -40,6 +40,9 @@ export default {
   computed: {
     posts() {
       return this.$store.state.posts;
+    },
+    postCount() {
+      return this.$store.state.posts.length;
     }
   },
   created() {
@@ -72,6 +75,8 @@ export default {
 
 <style lang="scss">
 .page-posts {
-
+  .post-count{
+    display:inline-block;
+  }
 }
 </style>

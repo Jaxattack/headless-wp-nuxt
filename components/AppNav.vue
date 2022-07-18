@@ -68,13 +68,11 @@ nav {
     }
   }
   a {
-    color: $white;
     &:hover {
-      opacity: 1;
+      color:$highlight;
     }
     &.nuxt-link-exact-active{
-      text-decoration:underline;
-      text-decoration-line: all;
+      color:$highlight;
     }
   }
 }

@@ -11,7 +11,7 @@
                   {{ post.title.rendered }}
                 </h3>
               </div>
-              <div class="button" >Go To Page <span>&#10132;</span></div>          
+              <div class="button" >Read More <span>&#10132;</span></div>          
             </div>
           </nuxt-link>
         </v-col>
@@ -20,6 +20,12 @@
 
 <script>
   export default {
+    props: {
+      limit: {
+        default : {},
+        type : String
+      }
+    },
     data() {
       return {
         title: "Home",
@@ -29,11 +35,8 @@
       };
     },
     computed: {
-      posts() {
-        return this.$store.state.posts;
-      },
       latestPosts(){
-        return this.$store.state.posts.slice(0, 3)
+        return this.$store.state.posts.slice(0, this.limit)
       }
     },
     created() {

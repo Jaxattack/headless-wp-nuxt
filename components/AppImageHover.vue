@@ -19,21 +19,22 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" Wscoped>
 picture{
 	overflow:hidden;
 	display: flex;
 	width:100%;
-	height:20vw;
-	border-radius:0.3em;
-}
-img{
-	object-fit: cover;
-	transform:scale(1.03);
-	will-change: transform;
-	transition: transform 150ms ease-out;
+	border-radius:0.4em;
+  aspect-ratio: 16 / 9;
+  img{
+		object-fit: cover;
+		will-change: transform;
+	}
 	&:hover{
-		transform: scale(1);
+  	img{
+			transform: scale(1.03);
+		}
 	}
 }
+
 </style>

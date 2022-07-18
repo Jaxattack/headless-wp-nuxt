@@ -48,3 +48,18 @@
     }
   }
 }
+
+// Image Grid
+
+.image-grid{
+  img.grid-image{
+    display:block;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+//  Padding Utility Classes
+
+.remove-padding-b{
+  padding-bottom:0 !important;
+}
