@@ -84,6 +84,7 @@ export default {
    ** NuxtImg Module
    */
   image: {
+    provider: 'ipx',
     domains: ['localhost','lancejackson.co.nz'],
     screens: {
       sm: 640,
