@@ -91,6 +91,7 @@ export default {
       md: 1024,
       xl: 1280
     },
+    format: "webp",
   },
   /*
   ** Do not import actual styles. Use this module only to import variables, mixins, functions (et cetera) as they won't exist in the actual build. Importing actual styles will include them in every component and will also make your build/HMR magnitudes slower. Do not do this!
