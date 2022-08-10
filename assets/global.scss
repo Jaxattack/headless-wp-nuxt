@@ -18,7 +18,8 @@
 
 // Button
 
-.button, input[type="submit"] {
+.button, 
+input[type="submit"] {
   display: inline-block;
   font-size: .7rem;
   text-transform: uppercase;
@@ -28,18 +29,6 @@
   border:1px solid $grey;
   border-radius:.3em;
   position:relative;
-  span{
-    color:$grey;
-    position:absolute;
-    right:24px;
-    transition:all 150ms ease-out;
-  }
-  &:hover{
-    span{
-      color:$white;
-      right:2px;
-    }
-  }
   &:active, &:focus{
     border-color:$white;
     span{

@@ -40,7 +40,6 @@ picture{
 	overflow:hidden;
 	display: flex;
 	width:100%;
-	border-radius:0.3em;
 }
 img{
 	object-fit: cover;

@@ -7,7 +7,8 @@
       <v-container full>
         <v-row>
           <v-col>
-            <h1>A blistering fast modern front-end boilerplate <br>built on the JAMStack + <a :href="features[index].url" target="_blank">{{ features[index].name }}</a></h1>
+            <h1>A blistering fast Front-end Boilerplate 
+              <br>built on the Jamstack + <a :href="features[index].url" target="_blank">{{ features[index].name }}</a></h1>
           </v-col>
         </v-row>
       </v-container>
@@ -26,10 +27,10 @@
       <v-container full>
         <v-row>
           <v-col cols="5">
-            <h1>Nuxt + Wordpress</h1>
+            <h1>Nuxt + <br>Wordpress</h1>
           </v-col>
           <v-col cols="6">
-            <h2 class="indent">JAMStack is an architecture designed to make the web faster, more secure, and easier to scale. The core principles of pre-rendering and decoupling enable JAMStack websites and applications to be delivered with greater speed, confidence and resilience than ever before.</h2>
+            <h2 class="indent">Jamstack is an architecture designed to make the web faster, more secure, and easier to scale. The core principles of pre-rendering and decoupling enable Jamstack websites and applications to be delivered with greater speed, confidence and resilience than ever before.</h2>
           </v-col>
         </v-row>
       </v-container>
@@ -101,12 +102,10 @@ export default {
   data() {
     return {
       currentUrl: "",
-      title: "JAMStack+",
-      heading: "JAMStack+",
+      title: "Jamstack Boilerplate by Lance Jackson",
+      heading: "Jamstack Boilerplate by Lance Jackson",
       heroImage: "/mountains-masthead.jpg",
       heroDependencies: "",
-      introHeading: "A modern front-end boilerplate built on Nuxt and headless Wordpress for blistering fast, SEO-optimized websites",
-      introCopy: "Lorem ipsum dolor sit amet leuciano deploy faucet havana",
       index: 0,
       features: [
         { name: "Nuxt",                 url: "https://nuxtjs.org/" },
@@ -138,8 +137,8 @@ export default {
           scrollTrigger: {
             trigger: el,
             scrub: true,
-            start: "center bottom",
-            end: "top center"
+            start: "top 80%",
+            end: "bottom 80%"
           },
           scale: .6,
           transformOrigin: "center center", 
@@ -214,8 +213,6 @@ html,body{
     }
   }
 }
-.wrapper{
-}
 section{
   padding-bottom:7rem;
   &.page-bottom{
@@ -233,7 +230,6 @@ a,
 a:active,
 a:visited {
   text-decoration: none;
-  color: $white;
   text-decoration-color:$grey;
 }
 img {

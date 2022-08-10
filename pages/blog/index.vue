@@ -1,21 +1,7 @@
 <template>
   <div class="page page-posts transition">
-    <section>
-      <v-container full>
-        <v-row>
-          <v-col>
-            <h1>Posts</h1>
-          </v-col>
-        </v-row>        
-      </v-container>
-    </section>
     <section class="page-bottom">
       <v-container full>
-        <v-row justify="end">
-          <v-col>
-            <h3 class="section-head">All<span> {{ postCount }}</span></h3>
-          </v-col>
-        </v-row>
         <AppPostList limit="6"/>
       </v-container>
     </section>
@@ -31,7 +17,7 @@ export default {
   },
   data() {
     return {
-      title: "Posts",
+      title: "All Posts",
       description: "Posts List Page Description",
       currentUrl: "",
       activeClass: "active"
@@ -77,6 +63,14 @@ export default {
 .page-posts {
   .post-count{
     display:inline-block;
+  }
+  .content-container{
+    h1{
+      margin-bottom:5rem;
+    }
+    p{
+      max-width:40rem;
+    }
   }
 }
 </style>

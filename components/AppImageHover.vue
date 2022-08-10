@@ -44,7 +44,6 @@ picture{
   aspect-ratio: 16 / 9;
 	display:block;
 	overflow:hidden;
-	border-radius:0.3em;
   img{
   	aspect-ratio: 16 / 9;
   	object-fit: cover;

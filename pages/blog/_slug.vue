@@ -1,21 +1,28 @@
   <template>
     <main class="page page-post-single post transition">
       <div class="feature-image-wrap">
-        <img class="feature-image" :src="post.acf.hero_image" :alt="post.title.rendered">        
+        <!-- <img class="feature-image" :src="post.acf.hero_image" :alt="post.title.rendered">   -->
+        <nuxt-img class="feature-image" 
+          :src="post.acf.hero_image"
+          :alt="post.title.rendered" 
+          placeholder
+          format="webp"
+          quality="80"
+        />      
       </div>
       <section class="page-bottom">
-        <v-container class="remove-padding-b" full>
+        <v-container full>
           <v-row>
             <v-col class="remove-padding-b">
               <div class="content-container">
                 <h1>{{ post.title.rendered }}</h1>
                 <p v-html="post.acf.body_copy"></p>
-                <div class="post-image-container">
-                  <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
-                  <img class="grid-image" src="https://picsum.photos/id/16/1600/1000" alt="">
-                  <img class="grid-image" src="https://picsum.photos/id/18/1600/1000" alt="">
-                  <img class="grid-image last" src="https://picsum.photos/id/11/1600/1000" alt="">
-                </div>
+              </div>
+              <div class="post-image-container">
+                <img class="grid-image" src="/1.jpg" alt="">
+                <img class="grid-image" src="/2.jpg" alt="">
+                <img class="grid-image" src="/3.jpg" alt="">
+                <img class="grid-image last" src="/5.jpg" alt="">
               </div>
             </v-col>
             <v-col>
@@ -27,8 +34,7 @@
   </template>
 
   <script>
-
-import { gsap } from "gsap";
+  import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   if (process.client) {
@@ -119,30 +125,30 @@ import { gsap } from "gsap";
         position: sticky;
         top: 4rem;
         right: 0;
-        width: 49.7vw;
+        width: 50vw;
         height: calc(100vh - 4rem);
         object-fit: cover;
       }
     }
-    
     .content-container{
+      max-width:30rem;
       h1{
         margin-bottom:5rem;
       }
       p{
-        max-width:40rem;
-      }
-      .post-image-container{
-        padding-top:2rem;
-        .grid-image{
-          display:block;
-          margin:0.5vw 0 0 0;
-          &.last{
-            margin-bottom:0;
-          }
-        } 
+        margin-left:5rem;
       }
     }
+    .post-image-container{
+      margin-top:5rem;
+    }
+    .grid-image{
+      display:block;
+      margin:4px 0 0 0;
+      &.last{
+        margin-bottom:0;
+      }
+    } 
     .post-single-content-container{
       margin:0 auto;
       .post-single-body-container{

@@ -3,8 +3,8 @@
     <section class="about-hero">
       <v-container full>
         <v-row>
-          <v-col cols="7">
-            <h1>JAMStack architecture can bring an array of benefits to sites and project workflows.</h1>
+          <v-col cols="9">
+            <h1>{{ description }}</h1>
           </v-col>
         </v-row>
       </v-container>
@@ -12,7 +12,7 @@
     <section>
       <v-container full>
         <v-row>
-          <v-col cols="5">
+          <v-col cols="6">
           </v-col>
           <v-col>
             <h3>Boilerplate Features</h3>
@@ -20,7 +20,7 @@
                 <li class="list-item" v-for="listItem in listItems">
                   <v-row>
                     <v-col cols="6">
-                      <p class="no-indent"><b>{{ listItem.name }}</b></p>
+                      <p class="no-indent">{{ listItem.name }}</p>
                     </v-col>
                     <v-col>
                       <p class="no-indent">{{ listItem.copy }}</p>
@@ -32,24 +32,29 @@
         </v-row>
       </v-container>
     </section>
+    <section class="about-benefits">
+      <v-container>
+        <v-row>
+          <v-col>
+              <h4 class="section-head">Faster performance</h4>
+              <p class="no-indent">Serve pre-built markup and assets over a CDN.</p>
+            </v-col>  
+            <v-col>
+              <h4 class="section-head">More secure</h4>
+              <p class="no-indent">No need to worry about server or database vulnerabilities.</p>
+            </v-col>
+            <v-col>
+              <h4 class="section-head">Less expensive</h4>
+              <p class="no-indent">Hosting of static files is cheap or even free.</p>
+            </v-col>  
+        </v-row>
+      </v-container>
+    </section>
     <section class="image-grid">
       <v-container full>
         <v-row no-gutters>
           <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
-          </v-col>
-          <v-col>
-          </v-col>
-          <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
-          </v-col>
-        </v-row>
-        <v-row no-gutters>
-          <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
-          </v-col>
-          <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
+            <img class="grid-image" src="/1.jpg" alt="">
           </v-col>
           <v-col>
           </v-col>
@@ -59,31 +64,10 @@
     <section class="about-benefits">
       <v-container>
         <v-row>
-          <v-col>
-              <h4 class="section-head">Security</h4>
-              <p>The Jamstack removes multiple moving parts and systems from the hosting infrastructure resulting in fewer servers and systems to harden against attack.</p>
-              <p>Serving pages and assets as pre-generated files allows read-only hosting reducing attack vectors even further. Meanwhile dynamic tools and services can be provided by vendors with teams dedicated to securing their specific systems and providing high levels of service.</p>
-            </v-col>  
-            <v-col>
-              <h4 class="section-head">Scale</h4>
-              <p>Popular architectures deal with heavy traffic loads by adding logic to cache popular views and resources. The Jamstack provides this by default. When sites can be served entirely from a CDN there is no complex logic or workflow to determine what assets can be cached and when.</p>
-              <p>With Jamstack sites everything can be cached in a content delivery network. With simpler deployments, built-in redundancy and incredible load capacity.</p>
-            </v-col>
-            <v-col>
-              <h4 class="section-head">Performance</h4>
-              <p>Page loading speeds have an impact on user experience and conversion. Jamstack sites remove the need to generate page views on a server at request time by instead generating pages ahead of time during a build.</p>
-              <p>With all the pages are already available on a CDN close to the user and ready to serve, very high performance is possible without introducing expensive or complex infrastructure.</p>
-            </v-col>  
-        </v-row>
-      </v-container>
-    </section>
-    <section class="about-benefits">
-      <v-container>
-        <v-row>
-          <v-col>
+          <v-col cols="6">
             <h2 class="sticky">All of the benefits of modern JavaScript development, with the client-facing familiarity of the Wordpress CMS</h2>
           </v-col>
-          <v-col cols="1">
+          <v-col cols="2">
           </v-col>
           <v-col>
             <h4 class="section-head">Pre-rendering</h4>
@@ -102,22 +86,22 @@
       <v-container full>
         <v-row no-gutters>
           <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/11/1600/1000" alt="">
+            <img class="grid-image" src="/4.jpg" alt="">
           </v-col>
           <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
+            <img class="grid-image" src="/6.jpg" alt="">
           </v-col>
           <v-col>
           </v-col>
         </v-row>
         <v-row no-gutters>
           <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/13/1600/1000" alt="">
+            <img class="grid-image" src="/3.jpg" alt="">
           </v-col>
           <v-col>
           </v-col>
           <v-col>
-            <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">
+            <img class="grid-image" src="/5.jpg" alt="">
           </v-col>
         </v-row>
       </v-container>
@@ -136,18 +120,18 @@ if (process.client) {
 export default {
   data() {
     return {
-      title: "About JAMStack+",
-      description: "About Page Description",
+      title: "About Jamstack",
+      description: "A modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup",
       currentUrl: "",
       listItems: [
-        {name: "Nuxt", copy: "VueJS framework for Static Site Generation"},
-        {name: "SASS", copy: "CSS preprocessor and minifier"},
-        {name: "Greensock Animation Plugin", copy: "Animation engine"},
-        {name: "Vuetify Grid", copy: "Lightweight flexbox based 12-point grid system"},
-        {name: "Adobe Fonts", copy: "Adobe web typeface library"},
-        {name: "Headless Wordpress CMS", copy: "Wordpress content management"},
-        {name: "Netlify Atomic Deploys", copy: "Automatic deploys on Git commit"},
-        {name: "Social Metas", copy: "Meta tag management  for SEO"}
+        {name: "Nuxt", copy: "VueJS Static Site Generation Framework"},
+        {name: "SASS", copy: "CSS Preprocessor and Minifier"},
+        {name: "Greensock Animation Plugin", copy: "JavaScript Animation Engine"},
+        {name: "Vuetify Grid", copy: "CSS Flexbox Grid Framework"},
+        {name: "Adobe Fonts", copy: "Adobe Typeface Library"},
+        {name: "Headless Wordpress CMS", copy: "Wordpress Content Management"},
+        {name: "Netlify Atomic Deploys", copy: "Automatic Deploys on Git Commit"},
+        {name: "Social Metas", copy: "Meta Tag Management for SEO"}
       ]
     };
   },

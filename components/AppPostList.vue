@@ -11,7 +11,7 @@
                   {{ post.title.rendered }}
                 </h3>
               </div>
-              <div class="button" >Read More <span>&#10132;</span></div>          
+              <div class="card-button" >Read More <span>&#10132;</span></div>          
             </div>
           </nuxt-link>
         </v-col>
@@ -51,43 +51,50 @@
     width: 100%;
     .post-content{
       &:hover{
-        .button{
-            color:$highlight;
-          span{
-            color:$highlight;
-            right:2px;
-          }
+        .card-button{
+            color:$white;
+            span{
+              color:$white;
+              right:2px;
+            }
         }
       }
       &:active, &:focus{
-        .button{
+        .card-button{
           right:2px;
         }
       }
       .post-content-copy{
-        padding: 1rem 0 0 0;
+        padding:1rem 0 0 0;
         h3 {
-          margin-bottom: 0rem;
+          margin-bottom: .25rem;
+          color:$white;
         }
         p {
           margin:0;
           text-indent:0;
         }
       }
-      .button{
+      .card-button{
         display: inline-block;
         font-size: .7rem;
         text-transform: uppercase;
         padding: 0px 15px 15px;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         position: relative;
         padding-left:2px;
         border-top:0;
-        border-bottom:1px solid $grey;
         border-left:none;
         border-right:none;
         border-radius:0;
         width:100%;
+        color:$white;
+        span{
+          color:$grey;
+          position:absolute;
+          right:24px;
+          transition:all 150ms ease-out;
+        }
       }
     }
   }

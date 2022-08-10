@@ -65,8 +65,8 @@ export default {
     "@nuxtjs/style-resources", 
     "@nuxtjs/gtm",
     'nuxt-gsap-module',
-    '@nuxtjs/vuetify'
-    // '@nuxt/image',
+    '@nuxtjs/vuetify',
+    '@nuxt/image'
   ],
     /*
    ** Middleware to handle endpoints
@@ -83,14 +83,14 @@ export default {
     /*
    ** NuxtImg Module
    */
-  // image: {
-  //   domains: ['lancejackson.co.nz'],
-  //   screens: {
-  //     sm: 640,
-  //     md: 1024,
-  //     xl: 1280
-  //   },
-  // },
+  image: {
+    domains: ['lancejackson.co.nz'],
+    screens: {
+      sm: 640,
+      md: 1024,
+      xl: 1280
+    },
+  },
   /*
   ** Do not import actual styles. Use this module only to import variables, mixins, functions (et cetera) as they won't exist in the actual build. Importing actual styles will include them in every component and will also make your build/HMR magnitudes slower. Do not do this!
   Doc: https://github.com/nuxt-community/style-resources-module

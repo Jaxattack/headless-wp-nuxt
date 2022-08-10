@@ -65,6 +65,10 @@ nav {
     li{
       display: inline-block;
       margin-left: 2rem;
+      font-family:'termina';
+      font-size:1em;
+      line-height:1.2;
+      letter-spacing:-0.03em;
     }
   }
   a {

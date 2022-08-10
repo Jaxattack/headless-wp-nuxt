@@ -16,35 +16,34 @@ html{
   color:$white;
 }
 h1,h2,h3,h4,h5,h6{
-	font-weight: 300;
-	letter-spacing:.03em;
+	font-weight: 400;
+	letter-spacing: -0.04em;
 	line-height:1.35;
+	font-family:termina;
 	&.indent{
 		text-indent:1em;
 	}
 }
 h1{
-	font-size:3.5em;
+	font-size:3em;
 	line-height:1.25;
-  font-weight: 400;
-  letter-spacing: 0em;
-  span,a{
-  	text-decoration:underline 1px;
-  	text-decoration-color:$grey;
-  	text-underline-offset: 0.1em;
-  	&:hover{
-  		color:$highlight;
-  		text-decoration-color:$highlight;
-  	}
-  }
+	letter-spacing: -0.05em;
+	span,a{
+		text-decoration:underline 1px;
+		text-decoration-color:$grey;
+		text-underline-offset: 0.1em;
+		&:hover{
+			color:$highlight;
+			text-decoration-color:$highlight;
+		}
+	}
 }
 h2{
-	font-size:2.1em;
+	font-size:1.8em;
 	line-height:1.3;
-  font-weight: 400;
 }
 h3{
-	font-size:1.3em;
+	font-size:1em;
 	line-height:1.2;
 	&.section-head{
 		display:flex;
@@ -60,10 +59,10 @@ h3{
 	}
 }
 h4{
-	font-weight: 600;
-  margin-bottom: 1em;
-  padding-top: 1em;
-  border-top: 1px solid #222;
+	font-weight: 400;
+	margin-bottom: 1em;
+	padding-top: 1em;
+	border-top: 1px solid $grey;
 	&:not(:first-of-type){
 		margin-top:2em;
 	}
@@ -76,8 +75,9 @@ h6{
 }
 p{
 	letter-spacing:.04em;
-  margin: 0px 0 1rem 0px;
+  	margin: 0px 0 1rem 0px;
 	text-indent:1rem;
+	color:$white;
 	&.no-indent{
 		text-indent:0rem;
 	}
@@ -117,12 +117,14 @@ ul{
 hr{
 
 }
+a{
+	color:$white;
+}
 a:not(.post-link),
 a:not(.post-link):active,
 a:not(.post-link):visited{
-	color:$white;
 	&:hover{
-  		color:$highlight;
+		color:$highlight;
   		text-decoration-color:$highlight;
 	}
 }
