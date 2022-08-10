@@ -84,7 +84,7 @@ export default {
    ** NuxtImg Module
    */
   image: {
-    domains: ['lancejackson.co.nz'],
+    domains: ['localhost','lancejackson.co.nz'],
     screens: {
       sm: 640,
       md: 1024,
