@@ -60,17 +60,21 @@ export default {
 </script>
 
 <style lang="scss">
-.page-posts {
-  .post-count{
-    display:inline-block;
-  }
-  .content-container{
-    h1{
-      margin-bottom:5rem;
+  .page{
+    &.page-posts {
+      padding-top: 4.8em;
+      .post-count{
+        display:inline-block;
+      }
+      .content-container{
+        h1{
+          margin-bottom:5rem;
+        }
+        p{
+          max-width:40rem;
+        }
+      }
     }
-    p{
-      max-width:40rem;
-    }
   }
-}
+
 </style>

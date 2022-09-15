@@ -9,11 +9,19 @@
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.1s;
+  transition: all 0.3s;
+  top:0vh;;
 }
 .page-enter,
-.page-leave-to {
+.page-leave-to{
   opacity: 0;
+}
+
+.page-enter{
+  top:-3vh;
+}
+.page-leave-to{
+  top:3vh;
 }
 
 // Button

@@ -1,7 +1,7 @@
   <template>
     <main class="page page-post-single post transition">
       <div class="feature-image-wrap">
-        <nuxt-picture class="feature-image" 
+        <img class="feature-image" 
           :src="post.acf.hero_image"
           :alt="post.title.rendered" />      
       </div>
@@ -14,10 +14,10 @@
                 <p v-html="post.acf.body_copy"></p>
               </div>
               <div class="post-image-container">
-                <nuxt-picture format="webp" class="grid-image" src="/1.jpg" alt=""/>
-                <nuxt-picture format="webp" class="grid-image" src="/2.jpg" alt=""/>
-                <nuxt-picture format="webp" class="grid-image" src="/3.jpg" alt=""/>
-                <nuxt-picture format="webp" class="grid-image last" src="/5.jpg" alt=""/>
+                <img class="grid-image" src="/1.jpg" alt=""/>
+                <img class="grid-image" src="/2.jpg" alt=""/>
+                <img class="grid-image" src="/3.jpg" alt=""/>
+                <img class="grid-image last" src="/5.jpg" alt=""/>
               </div>
             </v-col>
             <v-col>

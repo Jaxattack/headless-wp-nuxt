@@ -2,7 +2,7 @@
 	<footer class="footer">
 		<ul class="footer-links">
       <li v-for="footerlink in this.footerlinks" :key="footerlink.label" class="footer-link">
-        <nuxt-link :to="footerlink.to">{{ footerlink.label }}</nuxt-link>
+        <nuxt-link :id="footerlink.link" :to="footerlink.to">{{ footerlink.label }}</nuxt-link>
         <span :v-if="footerlink.comma">{{ footerlink.comma }}</span> 
       </li>
     </ul>
@@ -14,9 +14,9 @@
     data() {
       return{
         footerlinks: [
-          { to: '/about', label: 'About', comma: "," },
-          { to: '/blog', label: 'Posts', comma: "," },
-          { to: '/contact', label: 'Contact', comma: "." },
+          { to: '/about', label: 'About', link: 'about-footer-link', comma: "," },
+          { to: '/blog', label: 'Posts', link: 'about-posts-link', comma: "," },
+          { to: '/contact', label: 'Contact', link: '', comma: "." },
         ]
       }
     },

@@ -5,15 +5,15 @@ html{
 	font-family: neue-haas-grotesk-display, sans-serif;
 	font-weight: 400;
 	font-style: normal;
-  font-size: 1vw;
-  line-height:1.55;
-  letter-spacing:0.04em;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  color:$white;
+	font-size: .9vw;
+	line-height:1.55;
+	letter-spacing:0.04em;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	color:$white;
 }
 h1,h2,h3,h4,h5,h6{
 	font-weight: 400;
@@ -123,7 +123,8 @@ a{
 a:not(.post-link),
 a:not(.post-link):active,
 a:not(.post-link):visited{
-	&:hover{
+	&:hover,
+	&:focus{
 		color:$highlight;
   		text-decoration-color:$highlight;
 	}

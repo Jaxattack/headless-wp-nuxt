@@ -1,6 +1,6 @@
 <template>
       <v-row>
-        <v-col cols="4" class="post scroll-fade" v-for="post in latestPosts" :key="post.id">
+        <v-col cols="6" class="post scroll-fade" v-for="post in latestPosts" :key="post.id">
           <nuxt-link class="post-link" :to="`blog/${post.slug}`">
             <div class="post-content">
               <client-only>
@@ -10,8 +10,8 @@
                 <h3>
                   {{ post.title.rendered }}
                 </h3>
-              </div>
-              <div class="card-button" >Read More <span>&#10132;</span></div>          
+                <div class="card-button" >Read More <span>&#10132;</span></div>   
+              </div>       
             </div>
           </nuxt-link>
         </v-col>
@@ -50,6 +50,7 @@
   .post{
     width: 100%;
     .post-content{
+      position:relative;
       &:hover{
         .card-button{
             color:$white;
@@ -65,9 +66,14 @@
         }
       }
       .post-content-copy{
-        padding:1rem 0 0 0;
+        padding:15px;
+        position:absolute;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        z-index:50;
         h3 {
-          margin-bottom: .25rem;
+          margin-bottom: .1rem;
           color:$white;
         }
         p {
@@ -79,7 +85,7 @@
         display: inline-block;
         font-size: .7rem;
         text-transform: uppercase;
-        padding: 0px 15px 15px;
+        padding: 0px 15px 0 15px;
         letter-spacing: 1px;
         position: relative;
         padding-left:2px;

@@ -8,7 +8,7 @@
         <v-row>
           <v-col>
             <h1>A blistering fast Front-end Boilerplate 
-              <br>built on the Jamstack + <a :href="features[index].url" target="_blank">{{ features[index].name }}</a></h1>
+              <br>built on the Jamstack with <a :href="features[index].url" target="_blank">{{ features[index].name }}</a></h1>
           </v-col>
         </v-row>
       </v-container>
@@ -20,14 +20,14 @@
             <h3 class="section-head">Latest Posts<NuxtLink to="/blog">See all</NuxtLink></h3>
           </v-col>
         </v-row>
-        <AppPostList limit="3"/>
+        <AppPostList limit="2"/>
       </v-container>
     </section>
     <section>
       <v-container full>
         <v-row>
-          <v-col cols="5">
-            <h1>Nuxt + <br>Wordpress</h1>
+          <v-col cols="6">
+            <h1>Nuxt + Wordpress <br>means fast, <br>secure & easy.</easy></h1>
           </v-col>
           <v-col cols="6">
             <h2 class="indent">Jamstack is an architecture designed to make the web faster, more secure, and easier to scale. The core principles of pre-rendering and decoupling enable Jamstack websites and applications to be delivered with greater speed, confidence and resilience than ever before.</h2>
@@ -40,19 +40,17 @@
         <v-row>
             <v-row no-gutters>
               <v-col>
+              </v-col>
+              <v-col>
                 <img class="grid-image" src="https://picsum.photos/id/11/1600/1000" alt="">
               </v-col>
               <v-col>
                 <img class="grid-image" src="https://picsum.photos/id/12/1600/1000" alt="">
               </v-col>
-              <v-col>
-              </v-col>
             </v-row>
             <v-row no-gutters>
               <v-col>
                 <img class="grid-image" src="https://picsum.photos/id/13/1600/1000" alt="">
-              </v-col>
-              <v-col>
               </v-col>
               <v-col>
                 <img class="grid-image" src="https://picsum.photos/id/14/1600/1000" alt="">

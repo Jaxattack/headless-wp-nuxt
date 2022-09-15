@@ -3,7 +3,7 @@
     <section class="about-hero">
       <v-container full>
         <v-row>
-          <v-col cols="9">
+          <v-col cols="5">
             <h1>{{ description }}</h1>
           </v-col>
         </v-row>
@@ -45,7 +45,7 @@
             </v-col>
             <v-col>
               <h4 class="section-head">Less expensive</h4>
-              <p class="no-indent">Hosting of static files is cheap or even free.</p>
+              <p class="no-indent">Hosting of static files is cheaper than traditional hosting.</p>
             </v-col>  
         </v-row>
       </v-container>
@@ -99,8 +99,6 @@
             <img class="grid-image" src="/3.jpg" alt="">
           </v-col>
           <v-col>
-          </v-col>
-          <v-col>
             <img class="grid-image" src="/5.jpg" alt="">
           </v-col>
         </v-row>
@@ -124,10 +122,10 @@ export default {
       description: "A modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup",
       currentUrl: "",
       listItems: [
-        {name: "Nuxt", copy: "VueJS Static Site Generation Framework"},
+        {name: "Nuxt", copy: "Open Source Vue.js Static Site Generation Framework"},
         {name: "SASS", copy: "CSS Preprocessor and Minifier"},
         {name: "Greensock Animation Plugin", copy: "JavaScript Animation Engine"},
-        {name: "Vuetify Grid", copy: "CSS Flexbox Grid Framework"},
+        {name: "Vuetify Grid", copy: "Flexbox Grid Framework"},
         {name: "Adobe Fonts", copy: "Adobe Typeface Library"},
         {name: "Headless Wordpress CMS", copy: "Wordpress Content Management"},
         {name: "Netlify Atomic Deploys", copy: "Automatic Deploys on Git Commit"},
